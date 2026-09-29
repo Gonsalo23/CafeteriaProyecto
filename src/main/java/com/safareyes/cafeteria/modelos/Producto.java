@@ -12,21 +12,25 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@Builder
 
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column
+
     private String nombre;
-    @Column
+
     private String descripcion;
+
     @Column(precision = 10, scale = 2)
     private BigDecimal precio;
-    @Column
+
     private Boolean disponible;
-    @Column
+
     private Boolean activo;
+
+
 
 
 
