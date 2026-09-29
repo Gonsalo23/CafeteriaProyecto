@@ -30,6 +30,11 @@ public class Producto {
 
     private Boolean activo;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_categoria", nullable = false)
+    private Categoria categoria;
+
+
 
 
 
