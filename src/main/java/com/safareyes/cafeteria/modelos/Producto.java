@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Builder
+@ToString
 
 public class Producto {
     @Id

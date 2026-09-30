@@ -11,7 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Builder
-
+@ToString
 
 public class Cliente {
 
