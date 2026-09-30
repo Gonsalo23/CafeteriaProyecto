@@ -12,7 +12,6 @@ import lombok.*;
 @EqualsAndHashCode
 @Builder
 @ToString
-
 public class Categoria {
 
     @Id

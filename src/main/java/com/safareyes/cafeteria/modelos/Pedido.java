@@ -22,7 +22,7 @@ public class Pedido {
     private Integer id;
 
     @Column(name = "numero_turno")
-    private String numeroTurno;
+    private Integer numeroTurno;
 
     private LocalDateTime fecha;
 
@@ -35,6 +35,10 @@ public class Pedido {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cupon", nullable = false)
     private Cupon cupon;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_descuento", nullable = false)
+    private Descuento descuento;
 
 
 

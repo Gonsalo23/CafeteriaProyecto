@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Producto")
@@ -34,6 +36,16 @@ public class Producto {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_categoria", nullable = false)
     private Categoria categoria;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "producto_alergeno",
+            joinColumns = @JoinColumn(name = "producto_id"),
+            inverseJoinColumns = @JoinColumn(name = "alergeno_id")
+    )
+    private Set<Alergeno> alergenos = new HashSet<>();
+
+
 
 
 
