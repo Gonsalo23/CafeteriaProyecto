@@ -40,8 +40,8 @@ public class Producto {
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "producto_alergeno",
-            joinColumns = @JoinColumn(name = "producto_id"),
-            inverseJoinColumns = @JoinColumn(name = "alergeno_id")
+            joinColumns = @JoinColumn(name = "id_producto"),
+            inverseJoinColumns = @JoinColumn(name = "id_alergeno")
     )
     private Set<Alergeno> alergenos = new HashSet<>();
 
