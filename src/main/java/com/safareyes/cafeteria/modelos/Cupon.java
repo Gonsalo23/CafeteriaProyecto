@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Cupon")
+@Table(name = "cupon")
 @Getter
 @Setter
 @NoArgsConstructor
