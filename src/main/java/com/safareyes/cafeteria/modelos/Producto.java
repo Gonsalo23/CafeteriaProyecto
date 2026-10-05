@@ -34,6 +34,12 @@ public class Producto {
 
     private Boolean activo;
 
+    private BigDecimal iva;
+
+    private BigDecimal precio_iva;
+
+
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_categoria", nullable = false)
     private Categoria categoria;
