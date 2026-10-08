@@ -4,6 +4,7 @@ import com.safareyes.cafeteria.dtos.ProductoRanking;
 import com.safareyes.cafeteria.dtos.VentasDiaDTO;
 import com.safareyes.cafeteria.dtos.VentasHoraDTO;
 import com.safareyes.cafeteria.modelos.Categoria;
+import com.safareyes.cafeteria.modelos.Pedido;
 import com.safareyes.cafeteria.modelos.Producto;
 import com.safareyes.cafeteria.repositorios.ICategoriaRepositorio;
 import com.safareyes.cafeteria.repositorios.IPedidoRepositorio;
@@ -12,8 +13,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -33,9 +39,9 @@ class CafeteriaApplicationTests {
     void contextLoads() {
 
 
-        List<Producto> EndPoint = iProductoRepositorio.findByCategoria_IdAndActivoTrue(1);
+        List<Producto> EndPoint1 = iProductoRepositorio.findByCategoria_IdAndActivoTrue(1);
 
-        System.out.println(EndPoint);
+        System.out.println(EndPoint1);
 
         List<ProductoRanking> EndPoint16 = iProductoRepositorio.rankingProductosMasVendidos();
 
@@ -60,6 +66,26 @@ class CafeteriaApplicationTests {
         List<Categoria> EndPoint7 = iCategoriaRepositorio.findAll();
 
         System.out.println(EndPoint7);
+
+        Pedido EndPoint10 = iPedidoRepositorio.findById(1).orElse(null);
+
+        System.out.println(EndPoint10);
+
+
+        Pageable pageable = PageRequest.of(0, 10);
+
+        Page<Pedido> EndPoint11 = iPedidoRepositorio.findByEstadoAndFechaBetween(
+                "entregado",
+                LocalDateTime.of(2026, 9, 1, 0, 0),
+                LocalDateTime.of(2026, 10, 1, 0, 0),
+                pageable
+
+
+        );
+
+        System.out.println(EndPoint11.getContent());
+
+
 
 
 

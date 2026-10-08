@@ -4,13 +4,15 @@ import com.safareyes.cafeteria.dtos.VentasDiaDTO;
 import com.safareyes.cafeteria.dtos.VentasHoraDTO;
 import com.safareyes.cafeteria.modelos.Pedido;
 import org.springframework.cglib.core.Local;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
+import org.springframework.data.domain.Pageable;
 
 @Repository
 
@@ -26,5 +28,9 @@ public interface IPedidoRepositorio extends JpaRepository<Pedido, Integer> {
             @Param("fin") LocalDateTime fin
 
             );
+
+    Optional<Pedido> findById(Integer id);
+
+    Page<Pedido> findByEstadoAndFechaBetween(String estado, LocalDateTime fechaInicio, LocalDateTime fechaFin, Pageable pageable);
 
 }
