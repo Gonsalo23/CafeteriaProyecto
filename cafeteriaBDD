@@ -1,0 +1,459 @@
+-- =========================================================
+-- COFFEESTATION - DATOS COMPLETOS
+-- BASE DE DATOS: cafeteria
+-- ESQUEMA: public
+-- =========================================================
+
+-- ---------------------------------------------------------
+-- BORRAR TABLAS SI YA EXISTEN
+-- ---------------------------------------------------------
+
+drop table if exists detalle_pedido cascade;
+drop table if exists producto_alergeno cascade;
+drop table if exists pedido cascade;
+drop table if exists cliente cascade;
+drop table if exists usuario cascade;
+drop table if exists cupon cascade;
+drop table if exists descuento cascade;
+drop table if exists producto cascade;
+drop table if exists categoria cascade;
+drop table if exists alergeno cascade;
+
+
+-- ---------------------------------------------------------
+-- TABLA USUARIO
+-- ---------------------------------------------------------
+
+create table usuario (
+    id integer primary key,
+    nombre varchar(100) not null,
+    "contraseña" varchar(255) not null,
+    rol varchar(30) not null
+);
+
+
+-- ---------------------------------------------------------
+-- TABLA CATEGORIA
+-- ---------------------------------------------------------
+
+create table categoria (
+    id integer primary key,
+    nombre varchar(100) not null,
+    disponibilidad boolean not null
+);
+
+
+-- ---------------------------------------------------------
+-- TABLA ALERGENO
+-- ---------------------------------------------------------
+
+create table alergeno (
+    id integer primary key,
+    nombre varchar(100) not null
+);
+
+
+-- ---------------------------------------------------------
+-- TABLA CUPON
+-- ---------------------------------------------------------
+
+create table cupon (
+    id integer primary key,
+    codigo varchar(50) not null,
+    tipo varchar(20) not null,
+    valor numeric(8,2) not null,
+    fecha_inicio timestamp not null,
+    fecha_fin timestamp not null,
+    max_usos integer not null,
+    importe_minimo numeric(8,2) not null,
+    email_cliente varchar(150)
+);
+
+
+-- ---------------------------------------------------------
+-- TABLA DESCUENTO
+-- ---------------------------------------------------------
+
+create table descuento (
+    id integer primary key,
+    importe numeric(10,2) not null,
+    origen varchar(100) not null
+);
+
+
+-- ---------------------------------------------------------
+-- TABLA CLIENTE
+-- ---------------------------------------------------------
+
+create table cliente (
+    id integer primary key,
+    nombre varchar(100) not null,
+    email varchar(150) not null,
+    dni varchar(20),
+    id_usuario integer,
+
+    constraint fk_cliente_usuario
+        foreign key (id_usuario)
+        references usuario(id)
+);
+
+
+-- ---------------------------------------------------------
+-- TABLA PRODUCTO
+-- ---------------------------------------------------------
+
+create table producto (
+    id integer primary key,
+    nombre varchar(255) not null,
+    descripcion varchar(500),
+    precio numeric(10,2) not null,
+    disponible boolean not null,
+    activo boolean not null,
+    id_categoria integer not null,
+    iva numeric(5,2),
+    precio_iva numeric(10,2),
+
+    constraint fk_producto_categoria
+        foreign key (id_categoria)
+        references categoria(id)
+);
+
+
+-- ---------------------------------------------------------
+-- TABLA PEDIDO
+-- ---------------------------------------------------------
+
+create table pedido (
+    id integer primary key,
+    numero_turno integer not null,
+    fecha timestamp not null,
+    estado varchar(30) not null,
+    id_cliente integer,
+    id_cupon integer,
+    id_descuento integer,
+
+    constraint fk_pedido_cliente
+        foreign key (id_cliente)
+        references cliente(id),
+
+    constraint fk_pedido_cupon
+        foreign key (id_cupon)
+        references cupon(id),
+
+    constraint fk_pedido_descuento
+        foreign key (id_descuento)
+        references descuento(id)
+);
+
+
+-- ---------------------------------------------------------
+-- TABLA DETALLE_PEDIDO
+-- ---------------------------------------------------------
+
+create table detalle_pedido (
+    id integer primary key,
+    id_pedido integer not null,
+    id_producto integer not null,
+    cantidad integer not null,
+    precio numeric(10,2) not null,
+
+    constraint fk_detalle_pedido
+        foreign key (id_pedido)
+        references pedido(id),
+
+    constraint fk_detalle_producto
+        foreign key (id_producto)
+        references producto(id)
+);
+
+
+-- ---------------------------------------------------------
+-- TABLA PRODUCTO_ALERGENO
+-- ---------------------------------------------------------
+
+create table producto_alergeno (
+    id_producto integer not null,
+    id_alergeno integer not null,
+
+    primary key (id_producto, id_alergeno),
+
+    constraint fk_pa_producto
+        foreign key (id_producto)
+        references producto(id),
+
+    constraint fk_pa_alergeno
+        foreign key (id_alergeno)
+        references alergeno(id)
+);
+
+
+-- =========================================================
+-- DATOS
+-- =========================================================
+
+
+-- ---------------------------------------------------------
+-- USUARIOS
+-- ---------------------------------------------------------
+
+insert into usuario (id, nombre, "contraseña", rol) values
+(1, 'Gonzalo', '1234', 'cliente'),
+(2, 'Maria', '1234', 'cliente'),
+(3, 'Carlos', '1234', 'cliente'),
+(4, 'Laura', '1234', 'cliente'),
+(5, 'Javier', '1234', 'cliente'),
+(6, 'Ana', '1234', 'cliente'),
+(7, 'Administrador', 'admin123', 'admin'),
+(8, 'Pedro Camarero', 'camarero123', 'camarero'),
+(9, 'Lucia Cocinera', 'cocinero123', 'cocinero');
+
+
+-- ---------------------------------------------------------
+-- CATEGORIAS
+-- ---------------------------------------------------------
+
+insert into categoria (id, nombre, disponibilidad) values
+(1, 'Cafés', true),
+(2, 'Tés e infusiones', true),
+(3, 'Bollería', true),
+(4, 'Bocadillos', true),
+(5, 'Zumos', true),
+(6, 'Línea saludable', true);
+
+
+-- ---------------------------------------------------------
+-- ALERGENOS
+-- ---------------------------------------------------------
+
+insert into alergeno (id, nombre) values
+(1, 'Gluten'),
+(2, 'Leche'),
+(3, 'Huevo'),
+(4, 'Frutos secos'),
+(5, 'Soja'),
+(6, 'Cacahuetes');
+
+
+-- ---------------------------------------------------------
+-- CLIENTES
+-- ---------------------------------------------------------
+
+insert into cliente (id, nombre, email, dni, id_usuario) values
+(1, 'Gonzalo Díaz', 'gonzalo@gmail.com', '12345678A', 1),
+(2, 'María García', 'maria@gmail.com', '23456789B', 2),
+(3, 'Carlos López', 'carlos@gmail.com', '34567890C', 3),
+(4, 'Laura Sánchez', 'laura@gmail.com', '45678901D', 4),
+(5, 'Javier Martín', 'javier@gmail.com', '56789012E', 5),
+(6, 'Ana Fernández', 'ana@gmail.com', '67890123F', 6);
+
+
+-- ---------------------------------------------------------
+-- CUPONES
+-- ---------------------------------------------------------
+
+insert into cupon
+(id, codigo, tipo, valor, fecha_inicio, fecha_fin, max_usos, importe_minimo, email_cliente)
+values
+(1, 'BIENVENIDA10', 'porcentaje', 10.00,
+ '2026-09-01 00:00:00', '2026-12-31 23:59:59', 100, 0.00,
+ 'gonzalo@gmail.com'),
+
+(2, 'CAFE20', 'porcentaje', 20.00,
+ '2026-09-01 00:00:00', '2026-10-31 23:59:59', 50, 0.00,
+ 'maria@gmail.com'),
+
+(3, 'DESCUENTO5', 'fijo', 5.00,
+ '2026-09-01 00:00:00', '2026-11-30 23:59:59', 30, 0.00,
+ 'carlos@gmail.com'),
+
+(4, 'SALUDABLE15', 'porcentaje', 15.00,
+ '2026-09-15 00:00:00', '2026-12-31 23:59:59', 75, 0.00,
+ 'laura@gmail.com'),
+
+(5, 'CLIENTE10', 'porcentaje', 10.00,
+ '2026-09-01 00:00:00', '2026-10-15 23:59:59', 20, 0.00,
+ 'javier@gmail.com');
+
+
+-- ---------------------------------------------------------
+-- DESCUENTOS
+-- ---------------------------------------------------------
+
+insert into descuento (id, importe, origen) values
+(1, 10.00, 'Cliente nuevo'),
+(2, 20.00, 'Promoción semanal'),
+(3, 5.00, 'Fidelización'),
+(4, 15.00, 'Promoción saludable'),
+(5, 25.00, 'Black Friday'),
+(6, 10.00, 'Cumpleaños'),
+(7, 30.00, 'Promoción especial');
+
+
+-- ---------------------------------------------------------
+-- PRODUCTOS
+-- ---------------------------------------------------------
+
+insert into producto
+(id, nombre, descripcion, precio, disponible, activo, id_categoria, iva, precio_iva)
+values
+
+(1, 'Café solo', 'Café espresso tradicional',
+ 1.50, true, true, 1, 10.00, 1.65),
+
+(2, 'Café con leche', 'Café espresso con leche',
+ 1.80, true, true, 1, 10.00, 1.98),
+
+(3, 'Capuchino', 'Café con leche y espuma',
+ 2.30, true, true, 1, 10.00, 2.53),
+
+(4, 'Té verde', 'Té verde tradicional',
+ 1.70, true, true, 2, 10.00, 1.87),
+
+(5, 'Manzanilla', 'Infusión de manzanilla',
+ 1.50, true, true, 2, 10.00, 1.65),
+
+(6, 'Croissant', 'Croissant de mantequilla',
+ 2.00, true, true, 3, 10.00, 2.20),
+
+(7, 'Napolitana de chocolate', 'Napolitana rellena de chocolate',
+ 2.20, true, true, 3, 10.00, 2.42),
+
+(8, 'Bocadillo de jamón', 'Bocadillo de jamón',
+ 4.50, true, true, 4, 10.00, 4.95),
+
+(9, 'Bocadillo vegetal', 'Bocadillo vegetal',
+ 4.00, true, true, 4, 10.00, 4.40),
+
+(10, 'Zumo de naranja', 'Zumo natural de naranja',
+ 2.80, true, true, 5, 10.00, 3.08),
+
+(11, 'Zumo de piña', 'Zumo de piña',
+ 2.50, true, true, 5, 10.00, 2.75),
+
+(12, 'Tostada integral', 'Tostada de pan integral',
+ 2.50, true, true, 6, 10.00, 2.75),
+
+(13, 'Yogur con frutas', 'Yogur acompañado de frutas',
+ 3.50, true, true, 6, 10.00, 3.85),
+
+(14, 'Avena con frutas', 'Avena con frutas variadas',
+ 4.20, true, true, 6, 10.00, 4.62),
+
+(15, 'Brownie', 'Brownie de chocolate',
+ 2.80, true, false, 3, 10.00, 3.08);
+
+
+-- ---------------------------------------------------------
+-- PRODUCTO_ALERGENO
+-- ---------------------------------------------------------
+
+insert into producto_alergeno (id_producto, id_alergeno) values
+(1, 2),
+(2, 2),
+(3, 2),
+(3, 3),
+
+(6, 1),
+(6, 2),
+(6, 3),
+
+(7, 1),
+(7, 2),
+(7, 3),
+(7, 5),
+
+(8, 1),
+
+(9, 1),
+(9, 3),
+
+(12, 1),
+
+(13, 2),
+
+(14, 1),
+(14, 2),
+(14, 4),
+
+(15, 1),
+(15, 2),
+(15, 3),
+(15, 4),
+(15, 5);
+
+
+-- ---------------------------------------------------------
+-- PEDIDOS
+-- ---------------------------------------------------------
+
+insert into pedido
+(id, numero_turno, fecha, estado, id_cliente, id_cupon, id_descuento)
+values
+
+(1, 101, '2026-09-25 08:15:00',
+ 'entregado', 1, 1, 1),
+
+(2, 102, '2026-09-25 08:30:00',
+ 'entregado', 2, 2, 2),
+
+(3, 103, '2026-09-25 09:10:00',
+ 'pendiente', 3, null, 3),
+
+(4, 104, '2026-09-25 09:45:00',
+ 'preparando', 4, 4, 4),
+
+(5, 105, '2026-09-25 10:20:00',
+ 'entregado', 5, 5, 5),
+
+(6, 106, '2026-09-26 08:05:00',
+ 'entregado', 6, null, null),
+
+(7, 107, '2026-09-26 08:40:00',
+ 'cancelado', 1, null, null),
+
+(8, 108, '2026-09-26 09:15:00',
+ 'pendiente', 2, null, 6),
+
+(9, 109, '2026-09-27 10:00:00',
+ 'entregado', 1, null, null),
+
+(10, 110, '2026-09-27 10:30:00',
+ 'preparando', 3, null, 7);
+
+
+-- ---------------------------------------------------------
+-- DETALLE_PEDIDO
+-- ---------------------------------------------------------
+
+insert into detalle_pedido
+(id, id_pedido, id_producto, cantidad, precio)
+values
+
+(1, 1, 2, 1, 1.80),
+(2, 1, 6, 2, 2.00),
+
+(3, 2, 3, 1, 2.30),
+(4, 2, 7, 1, 2.20),
+
+(5, 3, 1, 2, 1.50),
+(6, 3, 10, 1, 2.80),
+
+(7, 4, 8, 1, 4.50),
+(8, 4, 10, 1, 2.80),
+
+(9, 5, 4, 1, 1.70),
+(10, 5, 12, 2, 2.50),
+
+(11, 6, 2, 1, 1.80),
+(12, 6, 13, 1, 3.50),
+
+(13, 7, 9, 1, 4.00),
+
+(14, 8, 5, 1, 1.50),
+(15, 8, 14, 1, 4.20),
+
+(16, 9, 8, 2, 4.50),
+(17, 9, 11, 2, 2.50),
+
+(18, 10, 3, 1, 2.30),
+(19, 10, 15, 1, 2.80);
