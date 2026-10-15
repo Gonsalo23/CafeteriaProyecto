@@ -16,7 +16,7 @@ public interface IProductoRepositorio extends JpaRepository<Producto, Integer> {
     public List<Producto> findByCategoria_IdAndActivoTrue(Integer categoriaId);
 
 
-    @Query(nativeQuery = true, value = ("select p.nombre, sum(dp.cantidad) as total_vendido from producto p join detalle_pedido dp on dp.id_producto = p.id join pedido pe on pe.id = dp.id_pedido where pe.estado = 'entregado' group by p.id, p.nombre order by total_vendido desc limit 5;"))
+    @Query(nativeQuery = true, value = ("select p.nombre, sum(dp.cantidad) as total_vendido from cafeteria.producto p join cafeteria.detalle_pedido dp on dp.id_producto = p.id join cafeteria.pedido pe on pe.id = dp.id_pedido where pe.estado = 'entregado' group by p.id, p.nombre order by total_vendido desc limit 5;"))
     List<ProductoRanking> rankingProductosMasVendidos();
 
     public Producto findProductoById(Integer id);
