@@ -22,7 +22,7 @@ public class Descuento {
     private Integer id;
 
     @Column(precision = 10, scale = 2)
-    private Integer importe;
+    private BigDecimal importe;
 
 
 

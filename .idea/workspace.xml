@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="Carpetas excepciones, dtos, servicios, controladores, client, y mappers.&#10;&#10;Endpoints 1-4">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0a2cb518-3b76-4008-8e1d-d769f92db18e.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0a2cb518-3b76-4008-8e1d-d769f92db18e/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0a2cb518-3b76-4008-8e1d-d769f92db18e/storage_v2/_src_/database/postgres.edMnLQ/schema/cafeteria.fElweQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0a2cb518-3b76-4008-8e1d-d769f92db18e/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0a2cb518-3b76-4008-8e1d-d769f92db18e/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0a2cb518-3b76-4008-8e1d-d769f92db18e/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/data_sources_history.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cafeteria.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/CafeteriaApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/dtos/ProductoRanking.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/dtos/VentasDiaDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/dtos/VentasHoraDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Alergeno$AlergenoBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Alergeno.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Categoria$CategoriaBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Categoria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cliente$ClienteBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cliente.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cupon$CuponBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cupon.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Descuento$DescuentoBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Descuento.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Pedido$PedidoBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Pedido.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Producto$ProductoBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Producto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Usuario$UsuarioBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Usuario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IAlergenoRepositorio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/ICategoriaRepositorio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IClienteRepositorio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/ICuponRepositorio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IDescuentoRepositorio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IProductoRepositorio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IUsuarioRepositorio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/safareyes/cafeteria/CafeteriaApplicationTests.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="0a2cb518-3b76-4008-8e1d-d769f92db18e" value="" />
+    </colors>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="34" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Gonsalo23&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Gonsalo23/CafeteriaProyecto.git&quot;,
+    &quot;accountId&quot;: &quot;b97c6975-dc34-4b22-8e6b-ed001f69ff70&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000029223603573" />
+      <entry key="MS500" value="1.1370889152689772" />
+      <entry key="S2" value="2.6162492609287122" />
+      <entry key="S5" value="4.081152532423836" />
+      <entry key="S10" value="4.905651278671959" />
+      <entry key="S30" value="6.439990426585295" />
+      <entry key="S60" value="9.771328940560412" />
+      <entry key="M2" value="14.918420282270311" />
+      <entry key="M5" value="21.97686336603418" />
+      <entry key="M10" value="29.86551312985801" />
+      <entry key="M15" value="36.4878118893396" />
+      <entry key="M30" value="53.307174949690946" />
+      <entry key="H1" value="84.87872383088647" />
+      <entry key="H2" value="142.83199176845778" />
+      <entry key="H4" value="242.23927126459387" />
+      <entry key="D1" value="523.7954052027013" />
+      <entry key="W1" value="622.939665083358" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="5.299508122136469E-177" />
+      <entry key="S5" value="4.685569222502089E-71" />
+      <entry key="S10" value="1.333476805238022E-35" />
+      <entry key="S30" value="9.035786052951924E-12" />
+      <entry key="S60" value="9.966008146851687E-6" />
+      <entry key="M2" value="0.012094367284989218" />
+      <entry key="M5" value="1.0252234569125882" />
+      <entry key="M10" value="4.945704379258867" />
+      <entry key="M15" value="8.794262577715298" />
+      <entry key="M30" value="19.853503756506555" />
+      <entry key="H1" value="43.53821276940686" />
+      <entry key="H2" value="85.64480492849992" />
+      <entry key="H4" value="147.33874730104998" />
+      <entry key="D1" value="293.6520312499642" />
+      <entry key="W1" value="341.0346347401879" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9862355667124101" />
+      <entry key="MS500" value="1.1337495084835756" />
+      <entry key="S2" value="2.613811873828341" />
+      <entry key="S5" value="4.079523230031595" />
+      <entry key="S10" value="4.904651118707894" />
+      <entry key="S30" value="6.439550867184525" />
+      <entry key="S60" value="9.771005967948973" />
+      <entry key="M2" value="14.930059172245986" />
+      <entry key="M5" value="22.994635667722353" />
+      <entry key="M10" value="34.792006041318785" />
+      <entry key="M15" value="45.258540924890134" />
+      <entry key="M30" value="73.13472527662591" />
+      <entry key="H1" value="128.3910992694329" />
+      <entry key="H2" value="228.4528980339227" />
+      <entry key="H4" value="389.55736299008475" />
+      <entry key="D1" value="817.4401586705707" />
+      <entry key="W1" value="963.9730735771813" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3JxVRpsVZ8i2Fy3b8HN1L6ZH5y5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.CafeteriaApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CafeteriaApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CafeteriaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;junie.plugin.stays.banner.dismissed&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/daw/Escritorio/Ejercicios JavaScript&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.CafeteriaApplicationTests.contextLoads">
+    <configuration name="CafeteriaApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cafeteria" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.safareyes.cafeteria.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.safareyes.cafeteria" />
+      <option name="MAIN_CLASS_NAME" value="com.safareyes.cafeteria.CafeteriaApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <envs>
+        <env name="DB_SCHEMA" value="Cafeteria" />
+        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/postgres?currentSchema=Cafeteria" />
+        <env name="DB_USER" value="postgres" />
+        <env name="DB_PASSWORD" value="12345" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CafeteriaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="DB_PASSWORD" value="12345" />
+        <env name="DB_SCHEMA" value="Cafeteria" />
+        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/postgres?currentSchema=Cafeteria" />
+        <env name="DB_USER" value="postgres" />
+      </envs>
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="Cafeteria" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.safareyes.cafeteria.CafeteriaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.CafeteriaApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.CafeteriaApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CafeteriaApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2df11533d9fe-intellij.indexing.shared.core-IU-262.11879.100" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.11879.100" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="" />
+      <created>1790602701878</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790602701878</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="AAA" />
+    <MESSAGE value="Cupon y Producto Tablas" />
+    <MESSAGE value="Todo lo demas tablas (me quedan algunos)" />
+    <MESSAGE value="tabla usuario y descuento" />
+    <MESSAGE value="Repositorios" />
+    <MESSAGE value="Retoques clases" />
+    <MESSAGE value="Retoques nm Producto" />
+    <MESSAGE value="Querys de los cojones fallos por to laos" />
+    <MESSAGE value="Solucionado y primera consulta hecha" />
+    <MESSAGE value="2 y 3 consulta" />
+    <MESSAGE value="mas consultas" />
+    <MESSAGE value="ultimas consultas" />
+    <MESSAGE value="Carpetas excepciones, dtos, servicios, controladores, client, y mappers.&#10;&#10;Endpoints 1-4" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/safareyes/cafeteria/repositorios/IProductoRepositorio.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/safareyes/cafeteria/repositorios/IProductoRepositorio.java" />
+  </component>
+</project>
