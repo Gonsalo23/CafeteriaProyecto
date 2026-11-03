@@ -1,8 +1,8 @@
 package com.safareyes.cafeteria;
 
-import com.safareyes.cafeteria.dtos.ProductoRanking;
-import com.safareyes.cafeteria.dtos.VentasDiaDTO;
-import com.safareyes.cafeteria.dtos.VentasHoraDTO;
+import com.safareyes.cafeteria.dtos.response.ProductoRankingDTO;
+import com.safareyes.cafeteria.dtos.response.VentasDiaDTO;
+import com.safareyes.cafeteria.dtos.response.VentasHoraDTO;
 import com.safareyes.cafeteria.modelos.Categoria;
 import com.safareyes.cafeteria.modelos.Pedido;
 import com.safareyes.cafeteria.modelos.Producto;
@@ -18,8 +18,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -43,7 +41,7 @@ class CafeteriaApplicationTests {
 
         System.out.println(EndPoint1);
 
-        List<ProductoRanking> EndPoint16 = iProductoRepositorio.rankingProductosMasVendidos();
+        List<ProductoRankingDTO> EndPoint16 = iProductoRepositorio.rankingProductosMasVendidos();
 
         System.out.println(EndPoint16);
 

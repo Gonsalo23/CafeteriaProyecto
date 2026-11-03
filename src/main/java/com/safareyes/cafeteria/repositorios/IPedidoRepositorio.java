@@ -1,9 +1,8 @@
 package com.safareyes.cafeteria.repositorios;
 
-import com.safareyes.cafeteria.dtos.VentasDiaDTO;
-import com.safareyes.cafeteria.dtos.VentasHoraDTO;
+import com.safareyes.cafeteria.dtos.response.VentasDiaDTO;
+import com.safareyes.cafeteria.dtos.response.VentasHoraDTO;
 import com.safareyes.cafeteria.modelos.Pedido;
-import org.springframework.cglib.core.Local;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

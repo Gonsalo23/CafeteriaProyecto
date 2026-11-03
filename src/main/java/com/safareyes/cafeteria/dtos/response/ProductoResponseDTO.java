@@ -1,0 +1,15 @@
+package com.safareyes.cafeteria.dtos.response;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+public record ProductoResponseDTO(
+        Long id,
+        String nombre,
+        String descripcion,
+        BigDecimal precio,
+        Boolean disponible,
+        Boolean activo,
+        String categoriaNombre,
+        List<String> alergenos
+) {}

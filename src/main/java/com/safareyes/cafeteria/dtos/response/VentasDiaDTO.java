@@ -1,4 +1,4 @@
-package com.safareyes.cafeteria.dtos;
+package com.safareyes.cafeteria.dtos.response;
 
 
 import lombok.AllArgsConstructor;

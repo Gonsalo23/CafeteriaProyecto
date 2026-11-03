@@ -1,11 +1,11 @@
-package com.safareyes.cafeteria.dtos;
+package com.safareyes.cafeteria.dtos.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ProductoRanking {
+public class ProductoRankingDTO {
 
     private String nombre;
     private Long totalVendido;
