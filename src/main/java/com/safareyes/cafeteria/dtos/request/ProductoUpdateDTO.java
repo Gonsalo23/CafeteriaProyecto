@@ -17,8 +17,8 @@ public record ProductoUpdateDTO(
   BigDecimal precio,
 
   @NotNull(message = "El ID de la categoria es obligatorio")
-  Long idCategoria,
+  Integer idCategoria,
 
-  List<Long> idAlergenos
+  List<Integer> idsAlergenos
 
 ) {}

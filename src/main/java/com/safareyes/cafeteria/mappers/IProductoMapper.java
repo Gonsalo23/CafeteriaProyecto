@@ -10,7 +10,6 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Mapper(componentModel = "spring")
@@ -34,7 +33,7 @@ public interface IProductoMapper {
     @Mapping(target = "alergenos", ignore = true)
     void updateEntityFromDTO(ProductoUpdateDTO dto, @MappingTarget Producto producto);
 
-    default List<String> mapAlergenos(Set<Alergeno> alergenos) {
+    default List<String> mapAlergenos(List<Alergeno> alergenos) {
         if (alergenos == null) return List.of();
         return alergenos.stream().map(Alergeno::getNombre).collect(Collectors.toList());
     }

@@ -11,17 +11,27 @@ import com.safareyes.cafeteria.modelos.Producto;
 import com.safareyes.cafeteria.repositorios.IAlergenoRepositorio;
 import com.safareyes.cafeteria.repositorios.ICategoriaRepositorio;
 import com.safareyes.cafeteria.repositorios.IProductoRepositorio;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Set;
-
-public class ProductoServicioImpl implements IProuctoServicio {
+import java.util.List;
+@Service
+public class ProductoServicioImpl implements IProductoServicio {
 
     private final IProductoRepositorio productoRepo;
     private final ICategoriaRepositorio categoriaRepo;
     private final IAlergenoRepositorio alergenoRepo;
     private final IProductoMapper productoMapper;
+
+    public ProductoServicioImpl(IProductoRepositorio productoRepo,
+                                ICategoriaRepositorio categoriaRepo,
+                                IAlergenoRepositorio alergenoRepo,
+                                IProductoMapper productoMapper) {
+        this.productoRepo = productoRepo;
+        this.categoriaRepo = categoriaRepo;
+        this.alergenoRepo = alergenoRepo;
+        this.productoMapper = productoMapper;
+    }
 
     @Override
     @Transactional
@@ -32,8 +42,8 @@ public class ProductoServicioImpl implements IProuctoServicio {
         Producto producto = productoMapper.toEntity(dto);
         producto.setCategoria(cat);
 
-        if (dto.idsAlergenos() != null && !dto.idsAlergenos().isEmpty()) {
-            Set<Alergeno> alergenos = new HashSet<>(alergenoRepo.findAllById(dto.idsAlergenos()));
+        if (dto.idAlergenos() != null && !dto.idAlergenos().isEmpty()) {
+            List<Alergeno> alergenos = alergenoRepo.findAllById(dto.idAlergenos());
             producto.setAlergenos(alergenos);
         }
 
@@ -42,7 +52,7 @@ public class ProductoServicioImpl implements IProuctoServicio {
 
     @Override
     @Transactional
-    public ProductoResponseDTO actualizarProducto(Long id, ProductoUpdateDTO dto) {
+    public ProductoResponseDTO actualizarProducto(Integer id, ProductoUpdateDTO dto) {
         Producto producto = productoRepo.findById(id)
                 .orElseThrow(() -> new RecursoNoEncontradoException("Producto no encontrado con ID: " + id));
 
@@ -53,7 +63,7 @@ public class ProductoServicioImpl implements IProuctoServicio {
         producto.setCategoria(cat);
 
         if (dto.idsAlergenos() != null) {
-            Set<Alergeno> alergenos = new HashSet<>(alergenoRepo.findAllById(dto.idsAlergenos()));
+            List<Alergeno> alergenos = alergenoRepo.findAllById(dto.idsAlergenos());
             producto.setAlergenos(alergenos);
         }
 
@@ -62,7 +72,7 @@ public class ProductoServicioImpl implements IProuctoServicio {
 
     @Override
     @Transactional
-    public void cambiarDisponibilidad(Long id, Boolean disponible) {
+    public void cambiarDisponibilidad(Integer id, Boolean disponible) {
         Producto producto = productoRepo.findById(id)
                 .orElseThrow(() -> new RecursoNoEncontradoException("Producto no encontrado con ID: " + id));
         producto.setDisponible(disponible);
@@ -71,7 +81,7 @@ public class ProductoServicioImpl implements IProuctoServicio {
 
     @Override
     @Transactional
-    public void bajaLogica(Long id) {
+    public void bajaLogica(Integer id) {
         Producto producto = productoRepo.findById(id)
                 .orElseThrow(() -> new RecursoNoEncontradoException("Producto no encontrado con ID: " + id));
         producto.setActivo(false);

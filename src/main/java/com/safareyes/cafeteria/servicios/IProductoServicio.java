@@ -1,11 +1,12 @@
 package com.safareyes.cafeteria.servicios;
 
+import com.safareyes.cafeteria.dtos.request.ProductoCreateDTO;
 import com.safareyes.cafeteria.dtos.request.ProductoUpdateDTO;
 import com.safareyes.cafeteria.dtos.response.ProductoResponseDTO;
 
 public interface IProductoServicio {
-    ProductoResponseDTO crearProducto(ProductoResponseDTO dto);
-    ProductoResponseDTO actualizarProducto(Long id, ProductoUpdateDTO dto);
-    void cambiarDisponibilidad(Long id, Boolean disponible);
-    void bajaLogica(Long id);
+    ProductoResponseDTO crearProducto(ProductoCreateDTO dto); // Recibe CreateDTO, devuelve ResponseDTO
+    ProductoResponseDTO actualizarProducto(Integer id, ProductoUpdateDTO dto);
+    void cambiarDisponibilidad(Integer id, Boolean disponible);
+    void bajaLogica(Integer id);
 }

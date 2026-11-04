@@ -1,6 +1,7 @@
 package com.safareyes.cafeteria.controladores;
 
 import com.safareyes.cafeteria.dtos.request.ProductoCreateDTO;
+import com.safareyes.cafeteria.dtos.request.ProductoDisponibilidadDTO;
 import com.safareyes.cafeteria.dtos.request.ProductoUpdateDTO;
 import com.safareyes.cafeteria.dtos.response.ProductoResponseDTO;
 import com.safareyes.cafeteria.servicios.IProductoServicio;
@@ -26,13 +27,13 @@ public class ProductoController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<ProductoResponseDTO> actualizar(@PathVariable Long id, @Valid @RequestBody ProductoUpdateDTO dto) {
+    public ResponseEntity<ProductoResponseDTO> actualizar(@PathVariable Integer id, @Valid @RequestBody ProductoUpdateDTO dto) {
         return ResponseEntity.ok(productoServicio.actualizarProducto(id, dto));
     }
 
     @PatchMapping("/{id}/disponibilidad")
     @PreAuthorize("hasAnyRole('ADMIN', 'BARISTA')")
-    public ResponseEntity<Void> cambiarDisponibilidad(@PathVariable Long id, @Valid @RequestBody ProductoDisponibilidadDTO dto) {
+    public ResponseEntity<Void> cambiarDisponibilidad(@PathVariable Integer id, @Valid @RequestBody ProductoDisponibilidadDTO dto) {
         productoServicio.cambiarDisponibilidad(id, dto.disponible());
         return ResponseEntity.noContent().build();
     }

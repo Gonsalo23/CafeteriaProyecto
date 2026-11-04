@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public record ProductoResponseDTO(
-        Long id,
+        Integer id,
         String nombre,
         String descripcion,
         BigDecimal precio,
