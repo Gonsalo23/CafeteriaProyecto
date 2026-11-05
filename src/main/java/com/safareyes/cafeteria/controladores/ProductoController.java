@@ -37,6 +37,11 @@ public class ProductoController {
         );
     }
 
+    @GetMapping("/{id}")
+    public ProductoResponseDTO buscarPorId(@PathVariable Integer id) {
+        return productoServicio.buscarProductoPorId(id);
+    }
+
     @PostMapping
     public ResponseEntity<ProductoResponseDTO> crear(@Valid @RequestBody ProductoCreateDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(productoServicio.crearProducto(dto));

@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import java.math.BigDecimal;
 
 public interface IProductoServicio {
+    ProductoResponseDTO buscarProductoPorId(Integer id);
     Page<ProductoResponseDTO> listarProductos(
             Integer categoriaId,
             String nombre,

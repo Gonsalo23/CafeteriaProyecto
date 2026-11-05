@@ -38,6 +38,15 @@ public class ProductoServicioImpl implements IProductoServicio {
 
     @Override
     @Transactional(readOnly = true)
+    public ProductoResponseDTO buscarProductoPorId(Integer id) {
+        Producto producto = productoRepo.findById(id)
+                .filter(Producto::getActivo)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Producto no encontrado con ID: " + id));
+        return productoMapper.toResponseDTO(producto);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public Page<ProductoResponseDTO> listarProductos(
             Integer categoriaId,
             String nombre,
