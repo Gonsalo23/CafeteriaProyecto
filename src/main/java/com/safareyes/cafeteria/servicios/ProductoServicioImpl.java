@@ -11,9 +11,12 @@ import com.safareyes.cafeteria.modelos.Producto;
 import com.safareyes.cafeteria.repositorios.IAlergenoRepositorio;
 import com.safareyes.cafeteria.repositorios.ICategoriaRepositorio;
 import com.safareyes.cafeteria.repositorios.IProductoRepositorio;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 @Service
 public class ProductoServicioImpl implements IProductoServicio {
@@ -31,6 +34,22 @@ public class ProductoServicioImpl implements IProductoServicio {
         this.categoriaRepo = categoriaRepo;
         this.alergenoRepo = alergenoRepo;
         this.productoMapper = productoMapper;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<ProductoResponseDTO> listarProductos(
+            Integer categoriaId,
+            String nombre,
+            BigDecimal precioMaximo,
+            Boolean disponible,
+            Integer excluirAlergenoId,
+            Pageable pageable
+    ) {
+        return productoRepo.findAll(
+                IProductoRepositorio.filtros(categoriaId, nombre, precioMaximo, disponible, excluirAlergenoId),
+                pageable
+        ).map(productoMapper::toResponseDTO);
     }
 
     @Override

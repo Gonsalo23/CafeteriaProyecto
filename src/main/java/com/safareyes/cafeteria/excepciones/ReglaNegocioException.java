@@ -1,4 +1,7 @@
 package com.safareyes.cafeteria.excepciones;
 
-public class ReglaNegocioException {
+public class ReglaNegocioException extends RuntimeException {
+    public ReglaNegocioException(String message) {
+        super(message);
+    }
 }
