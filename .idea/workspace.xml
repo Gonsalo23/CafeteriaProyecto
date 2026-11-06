@@ -7,20 +7,14 @@
     <option name="selectedModelId" value="ensemble" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="endpoint lista con filtros opcionales (endpoint 2)">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="endpoint 11 lista pedidos filtro por estado y fecha">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/CategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/CategoriaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/PedidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/LineaPedidoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/LineaPedidoResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/PedidoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/PedidoResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/mappers/IPedidoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/mappers/IPedidoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/ICategoriaRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/ICategoriaRepositorio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ICategoriaServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ICategoriaServicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/IPedidoServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/IPedidoServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ProductoServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ProductoServicioImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/ICategoriaRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/ICategoriaRepositorio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,23 +77,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0000000000035978" />
-      <entry key="M10" value="1.0000083571761742" />
-      <entry key="M15" value="1.0012942541650802" />
-      <entry key="M30" value="1.2846390704323623" />
-      <entry key="H1" value="7.1627022792203165" />
-      <entry key="H2" value="40.08525779507609" />
-      <entry key="H4" value="129.83664257478557" />
-      <entry key="D1" value="493.2728759362523" />
-      <entry key="W1" value="648.7485847213541" />
+      <entry key="MS100" value="1.0018544384206003" />
+      <entry key="MS500" value="1.6407497341016877" />
+      <entry key="S2" value="5.013748403632608" />
+      <entry key="S5" value="8.964853057740427" />
+      <entry key="S10" value="11.916608211467336" />
+      <entry key="S30" value="14.96812308267966" />
+      <entry key="S60" value="15.933152780758375" />
+      <entry key="M2" value="16.453071375443685" />
+      <entry key="M5" value="16.777881783044375" />
+      <entry key="M10" value="16.88838226723692" />
+      <entry key="M15" value="16.92673719493879" />
+      <entry key="M30" value="17.24585922474449" />
+      <entry key="H1" value="23.12836275162332" />
+      <entry key="H2" value="56.026233834003236" />
+      <entry key="H4" value="145.75006564588784" />
+      <entry key="D1" value="509.21992567789584" />
+      <entry key="W1" value="664.7386660450426" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -107,37 +101,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="1.2961740683467899E-135" />
-      <entry key="S60" value="3.600245989997721E-68" />
-      <entry key="M2" value="1.900963169311033E-34" />
-      <entry key="M5" value="3.7905329140415974E-14" />
-      <entry key="M10" value="3.62611418663176E-7" />
-      <entry key="M15" value="1.1003571709096377E-4" />
-      <entry key="M30" value="0.05825039293318768" />
-      <entry key="H1" value="2.24068531438806" />
-      <entry key="H2" value="19.30593810636597" />
-      <entry key="H4" value="70.29867562078857" />
-      <entry key="D1" value="263.6535369730758" />
-      <entry key="W1" value="341.56478142377864" />
+      <entry key="S30" value="9.5521196284519E-136" />
+      <entry key="S60" value="3.0906539937444627E-68" />
+      <entry key="M2" value="1.7612978650119925E-34" />
+      <entry key="M5" value="3.676579103613446E-14" />
+      <entry key="M10" value="3.5711927985920697E-7" />
+      <entry key="M15" value="1.0892182068521022E-4" />
+      <entry key="M30" value="0.05795480732851302" />
+      <entry key="H1" value="2.234993020824646" />
+      <entry key="H2" value="19.28139986568596" />
+      <entry key="H4" value="70.25398589138076" />
+      <entry key="D1" value="263.62559494023884" />
+      <entry key="W1" value="341.559609892357" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9592641193252643" />
-      <entry key="MS500" value="0.9917167307382933" />
-      <entry key="S2" value="0.9979227189990506" />
-      <entry key="S5" value="0.999168569213607" />
-      <entry key="S10" value="0.9995841981612189" />
-      <entry key="S30" value="0.9998613801725043" />
-      <entry key="S60" value="0.9999306876841536" />
-      <entry key="M2" value="0.9999653432415313" />
-      <entry key="M5" value="0.9999861371561143" />
-      <entry key="M10" value="1.0000017867111022" />
-      <entry key="M15" value="1.0013993472928406" />
-      <entry key="M30" value="1.3428077135837242" />
-      <entry key="H1" value="9.402013030905655" />
-      <entry key="H2" value="59.38569727656644" />
-      <entry key="H4" value="200.12535645517443" />
-      <entry key="D1" value="756.9198564766768" />
-      <entry key="W1" value="990.3121349086405" />
+      <entry key="MS100" value="0.9677399847256773" />
+      <entry key="MS500" value="1.6298791364217473" />
+      <entry key="S2" value="4.9946536963769494" />
+      <entry key="S5" value="8.943804931467396" />
+      <entry key="S10" value="11.900570615549716" />
+      <entry key="S30" value="14.960813607144505" />
+      <entry key="S60" value="15.929182825594161" />
+      <entry key="M2" value="16.451001088581712" />
+      <entry key="M5" value="16.777032296933356" />
+      <entry key="M10" value="16.887954240172757" />
+      <entry key="M15" value="16.926559395371125" />
+      <entry key="M30" value="17.303591385579125" />
+      <entry key="H1" value="25.36191394639978" />
+      <entry key="H2" value="75.30210666109788" />
+      <entry key="H4" value="215.9940784221451" />
+      <entry key="D1" value="772.8389619282148" />
+      <entry key="W1" value="1006.2970442977962" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -295,6 +289,7 @@
     <MESSAGE value="arreglos" />
     <MESSAGE value="endpoint lista con filtros opcionales (endpoint 1)" />
     <MESSAGE value="endpoint lista con filtros opcionales (endpoint 2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="endpoint lista con filtros opcionales (endpoint 2)" />
+    <MESSAGE value="endpoint 11 lista pedidos filtro por estado y fecha" />
+    <option name="LAST_COMMIT_MESSAGE" value="endpoint 11 lista pedidos filtro por estado y fecha" />
   </component>
 </project>

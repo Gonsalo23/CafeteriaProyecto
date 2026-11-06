@@ -57,4 +57,25 @@ public interface IPedidoRepositorio extends JpaRepository<Pedido, Integer>, JpaS
 
     Optional<Pedido> findById(Integer id);
 
+    @Query(value = """
+            select dp.id_producto as "productoId",
+                   p.nombre as "productoNombre",
+                   dp.cantidad as cantidad,
+                   dp.precio as "precioUnitario",
+                   (dp.cantidad * dp.precio) as subtotal
+            from cafeteria.detalle_pedido dp
+            join cafeteria.producto p on p.id = dp.id_producto
+            where dp.id_pedido = :pedidoId
+            order by dp.id
+            """, nativeQuery = true)
+    List<LineaPedidoProjection> buscarLineasPorPedidoId(@Param("pedidoId") Integer pedidoId);
+
+    interface LineaPedidoProjection {
+        Integer getProductoId();
+        String getProductoNombre();
+        Integer getCantidad();
+        java.math.BigDecimal getPrecioUnitario();
+        java.math.BigDecimal getSubtotal();
+    }
+
 }

@@ -8,4 +8,5 @@ import java.time.LocalDate;
 
 public interface IPedidoServicio {
     Page<PedidoResponseDTO> listarPedidos(String estado, LocalDate desde, LocalDate hasta, Pageable pageable);
+    PedidoResponseDTO buscarPedidoPorId(Integer id);
 }

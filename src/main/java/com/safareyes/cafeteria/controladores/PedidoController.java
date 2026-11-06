@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,5 +31,10 @@ public class PedidoController {
             @PageableDefault(size = 10, sort = "fecha", direction = Sort.Direction.DESC) Pageable pageable
     ) {
         return pedidoServicio.listarPedidos(estado, desde, hasta, pageable);
+    }
+
+    @GetMapping("/{id}")
+    public PedidoResponseDTO buscarPorId(@PathVariable Integer id) {
+        return pedidoServicio.buscarPedidoPorId(id);
     }
 }

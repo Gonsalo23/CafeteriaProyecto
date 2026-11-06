@@ -1,4 +1,12 @@
 package com.safareyes.cafeteria.dtos.response;
 
-public record LineaPedidoResponseDTO() {
+import java.math.BigDecimal;
+
+public record LineaPedidoResponseDTO(
+        Integer productoId,
+        String productoNombre,
+        Integer cantidad,
+        BigDecimal precioUnitario,
+        BigDecimal subtotal
+) {
 }
