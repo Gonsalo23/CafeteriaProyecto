@@ -1,9 +1,9 @@
 package com.safareyes.cafeteria.servicios;
 
-import com.safareyes.cafeteria.dtos.response.CategoriaResponseDTO;
+import com.safareyes.cafeteria.repositorios.ICategoriaRepositorio;
 
 import java.util.List;
 
 public interface ICategoriaServicio {
-    List<CategoriaResponseDTO> listarCategorias();
+    List<ICategoriaRepositorio.CategoriaResumen> listarCategorias();
 }

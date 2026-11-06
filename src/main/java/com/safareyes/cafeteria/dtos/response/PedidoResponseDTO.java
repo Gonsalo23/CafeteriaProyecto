@@ -1,4 +1,12 @@
 package com.safareyes.cafeteria.dtos.response;
 
-public record PedidoResponseDTO() {
+import java.time.LocalDateTime;
+
+public record PedidoResponseDTO(
+        Integer id,
+        Integer numeroTurno,
+        LocalDateTime fecha,
+        String estado,
+        Integer clienteId
+) {
 }

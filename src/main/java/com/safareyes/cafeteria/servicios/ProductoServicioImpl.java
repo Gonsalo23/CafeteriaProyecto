@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 @Service
-public class ProductoServicioImpl implements IProductoServicio {
+public class ProductoServicioImpl implements IProductoServicio, ICategoriaServicio {
 
     private final IProductoRepositorio productoRepo;
     private final ICategoriaRepositorio categoriaRepo;
@@ -59,6 +59,12 @@ public class ProductoServicioImpl implements IProductoServicio {
                 IProductoRepositorio.filtros(categoriaId, nombre, precioMaximo, disponible, excluirAlergenoId),
                 pageable
         ).map(productoMapper::toResponseDTO);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<ICategoriaRepositorio.CategoriaResumen> listarCategorias() {
+        return categoriaRepo.listarConCantidadProductosActivos();
     }
 
     @Override

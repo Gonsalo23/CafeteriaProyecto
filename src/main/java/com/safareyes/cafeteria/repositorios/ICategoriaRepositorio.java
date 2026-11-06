@@ -1,6 +1,5 @@
 package com.safareyes.cafeteria.repositorios;
 
-import com.safareyes.cafeteria.dtos.response.CategoriaResponseDTO;
 import com.safareyes.cafeteria.modelos.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,14 +12,20 @@ import java.util.List;
 public interface ICategoriaRepositorio extends JpaRepository<Categoria, Integer> {
 
     @Query("""
-            select new com.safareyes.cafeteria.dtos.response.CategoriaResponseDTO(
-                c.id,
-                c.nombre,
-                c.disponibilidad,
-                (select count(p) from Producto p where p.categoria = c and p.activo = true)
-            )
+            select c.id as id,
+                   c.nombre as nombre,
+                   c.disponibilidad as disponibilidad,
+                   (select count(p) from Producto p where p.categoria = c and p.activo = true)
+                       as productosActivos
             from Categoria c
             order by c.nombre
             """)
-    List<CategoriaResponseDTO> listarConCantidadProductosActivos();
+    List<CategoriaResumen> listarConCantidadProductosActivos();
+
+    interface CategoriaResumen {
+        Integer getId();
+        String getNombre();
+        Boolean getDisponibilidad();
+        Long getProductosActivos();
+    }
 }
