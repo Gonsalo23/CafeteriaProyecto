@@ -72,16 +72,16 @@ class CafeteriaApplicationTests {
 
         Pageable pageable = PageRequest.of(0, 10);
 
-        Page<Pedido> EndPoint11 = iPedidoRepositorio.findByEstadoAndFechaBetween(
-                "entregado",
-                LocalDateTime.of(2026, 9, 1, 0, 0),
-                LocalDateTime.of(2026, 10, 1, 0, 0),
-                pageable
+//        Page<Pedido> EndPoint11 = iPedidoRepositorio.findByEstadoAndFechaBetween(
+//                "entregado",
+//                LocalDateTime.of(2026, 9, 1, 0, 0),
+//                LocalDateTime.of(2026, 10, 1, 0, 0),
+//                pageable
+//
+//
+//        );
 
-
-        );
-
-        System.out.println(EndPoint11.getContent());
+//        System.out.println(EndPoint11.getContent());
 
 
 

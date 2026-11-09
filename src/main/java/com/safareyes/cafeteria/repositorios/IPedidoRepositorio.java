@@ -48,7 +48,21 @@ public interface IPedidoRepositorio extends JpaRepository<Pedido, Integer>, JpaS
 
     List<VentasHoraDTO> ventasPorHora();
 
-    @Query(nativeQuery = true, value = "select count(distinct pe.id) as num_pedidos, sum(dp.cantidad * dp.precio) as total, sum(dp.cantidad * dp.precio) / 1.10 as base, sum(dp.cantidad * dp.precio) - sum(dp.cantidad * dp.precio) / 1.10 as iva from cafeteria.pedido pe join cafeteria.detalle_pedido dp on dp.id_pedido = pe.id where pe.estado = 'entregado' and pe.fecha >= :inicio and pe.fecha < :fin")
+    @Query(nativeQuery = true, value = """
+            select count(distinct pe.id) as num_pedidos,
+                   coalesce(sum(dp.cantidad * dp.precio), 0) as total,
+                   coalesce(round(sum(dp.cantidad * dp.precio) / 1.10, 2), 0) as base,
+                   coalesce(round(
+                       sum(dp.cantidad * dp.precio)
+                           - sum(dp.cantidad * dp.precio) / 1.10,
+                       2
+                   ), 0) as iva
+            from cafeteria.pedido pe
+            join cafeteria.detalle_pedido dp on dp.id_pedido = pe.id
+            where pe.estado = 'entregado'
+              and pe.fecha >= :inicio
+              and pe.fecha < :fin
+            """)
     VentasDiaDTO ventasDia(
             @Param("inicio") LocalDateTime inicio,
             @Param("fin") LocalDateTime fin

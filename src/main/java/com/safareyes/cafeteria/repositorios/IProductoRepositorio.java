@@ -6,9 +6,11 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -66,6 +68,26 @@ public interface IProductoRepositorio extends JpaRepository<Producto, Integer>, 
 
     @Query(nativeQuery = true, value = ("select p.nombre, sum(dp.cantidad) as total_vendido from producto p join detalle_pedido dp on dp.id_producto = p.id join pedido pe on pe.id = dp.id_pedido where pe.estado = 'entregado' group by p.id, p.nombre order by total_vendido desc limit 5;"))
     List<ProductoRankingDTO> rankingProductosMasVendidos();
+
+    @Query(value = """
+            select p.nombre as nombre,
+                   sum(dp.cantidad) as total_vendido
+            from cafeteria.producto p
+            join cafeteria.detalle_pedido dp on dp.id_producto = p.id
+            join cafeteria.pedido pe on pe.id = dp.id_pedido
+            where pe.estado = 'entregado'
+              and pe.fecha >= :desde
+              and pe.fecha < :hastaExclusivo
+            group by p.id, p.nombre
+            order by total_vendido desc, p.nombre
+            limit :limite
+            """, nativeQuery = true)
+
+    List<ProductoRankingDTO> rankingProductosMasVendidosEntreFechas(
+            @Param("desde") LocalDateTime desde,
+            @Param("hastaExclusivo") LocalDateTime hastaExclusivo,
+            @Param("limite") int limite
+    );
 
     public Producto findProductoById(Integer id);
 
