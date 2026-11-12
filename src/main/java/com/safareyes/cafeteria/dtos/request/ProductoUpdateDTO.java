@@ -19,6 +19,7 @@ public record ProductoUpdateDTO(
   @NotNull(message = "El ID de la categoria es obligatorio")
   Integer idCategoria,
 
-  List<Integer> idsAlergenos
+  @NotNull(message = "La lista de alérgenos es obligatoria; usa [] si no tiene")
+  List<@NotNull @Positive Integer> idsAlergenos
 
 ) {}

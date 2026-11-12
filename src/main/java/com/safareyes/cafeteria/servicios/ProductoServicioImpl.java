@@ -17,7 +17,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 @Service
 public class ProductoServicioImpl implements IProductoServicio, ICategoriaServicio {
 
@@ -96,10 +99,16 @@ public class ProductoServicioImpl implements IProductoServicio, ICategoriaServic
         productoMapper.updateEntityFromDTO(dto, producto);
         producto.setCategoria(cat);
 
-        if (dto.idsAlergenos() != null) {
-            List<Alergeno> alergenos = alergenoRepo.findAllById(dto.idsAlergenos());
-            producto.setAlergenos(alergenos);
+        Set<Integer> idsAlergenos = new HashSet<>(dto.idsAlergenos());
+        List<Alergeno> alergenos = alergenoRepo.findAllById(idsAlergenos);
+        if (alergenos.size() != idsAlergenos.size()) {
+            Set<Integer> idsEncontrados = alergenos.stream()
+                    .map(Alergeno::getId)
+                    .collect(Collectors.toSet());
+            idsAlergenos.removeAll(idsEncontrados);
+            throw new RecursoNoEncontradoException("Alérgenos no encontrados con IDs: " + idsAlergenos);
         }
+        producto.setAlergenos(alergenos);
 
         return productoMapper.toResponseDTO(productoRepo.save(producto));
     }
