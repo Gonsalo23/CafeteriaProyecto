@@ -184,6 +184,15 @@ create table detalle_pedido (
         references producto(id)
 );
 
+-- Generar automáticamente el ID de los nuevos detalles de pedido.
+CREATE SEQUENCE IF NOT EXISTS public.detalle_pedido_id_seq;
+
+ALTER TABLE public.detalle_pedido
+    ALTER COLUMN id SET DEFAULT nextval('public.detalle_pedido_id_seq');
+
+ALTER SEQUENCE public.detalle_pedido_id_seq
+    OWNED BY public.detalle_pedido.id;
+
 
 -- ---------------------------------------------------------
 -- TABLA PRODUCTO_ALERGENO
@@ -482,3 +491,10 @@ values
 
 (18, 10, 3, 1, 2.30),
 (19, 10, 15, 1, 2.80);
+
+-- Sincronizar la secuencia con los detalles insertados explícitamente.
+SELECT setval(
+    'public.detalle_pedido_id_seq',
+    COALESCE((SELECT MAX(id) FROM public.detalle_pedido), 0) + 1,
+    false
+);
