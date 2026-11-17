@@ -21,7 +21,6 @@ DROP TABLE IF EXISTS cafeteria.producto CASCADE;
 DROP TABLE IF EXISTS cafeteria.categoria CASCADE;
 DROP TABLE IF EXISTS cafeteria.alergeno CASCADE;
 
-
 -- ---------------------------------------------------------
 -- TABLA USUARIO
 -- ---------------------------------------------------------
@@ -33,7 +32,6 @@ CREATE TABLE cafeteria.usuario (
     rol varchar(30) NOT NULL
 );
 
-
 -- ---------------------------------------------------------
 -- TABLA CATEGORIA
 -- ---------------------------------------------------------
@@ -44,7 +42,6 @@ CREATE TABLE cafeteria.categoria (
     disponibilidad boolean NOT NULL
 );
 
-
 -- ---------------------------------------------------------
 -- TABLA ALERGENO
 -- ---------------------------------------------------------
@@ -53,7 +50,6 @@ CREATE TABLE cafeteria.alergeno (
     id integer PRIMARY KEY,
     nombre varchar(100) NOT NULL
 );
-
 
 -- ---------------------------------------------------------
 -- TABLA CUPON
@@ -71,7 +67,6 @@ CREATE TABLE cafeteria.cupon (
     email_cliente varchar(150)
 );
 
-
 -- ---------------------------------------------------------
 -- TABLA DESCUENTO
 -- ---------------------------------------------------------
@@ -81,7 +76,6 @@ CREATE TABLE cafeteria.descuento (
     importe numeric(10,2) NOT NULL,
     origen varchar(100) NOT NULL
 );
-
 
 -- ---------------------------------------------------------
 -- TABLA CLIENTE
@@ -93,12 +87,9 @@ CREATE TABLE cafeteria.cliente (
     email varchar(150) NOT NULL,
     dni varchar(20),
     id_usuario integer,
-
     CONSTRAINT fk_cliente_usuario
-        FOREIGN KEY (id_usuario)
-        REFERENCES cafeteria.usuario(id)
+        FOREIGN KEY (id_usuario) REFERENCES cafeteria.usuario(id)
 );
-
 
 -- ---------------------------------------------------------
 -- TABLA PRODUCTO
@@ -114,12 +105,9 @@ CREATE TABLE cafeteria.producto (
     id_categoria integer NOT NULL,
     iva numeric(5,2),
     precio_iva numeric(10,2),
-
     CONSTRAINT fk_producto_categoria
-        FOREIGN KEY (id_categoria)
-        REFERENCES cafeteria.categoria(id)
+        FOREIGN KEY (id_categoria) REFERENCES cafeteria.categoria(id)
 );
-
 
 -- ---------------------------------------------------------
 -- TABLA PEDIDO
@@ -133,18 +121,12 @@ CREATE TABLE cafeteria.pedido (
     id_cliente integer,
     id_cupon integer,
     id_descuento integer,
-
     CONSTRAINT fk_pedido_cliente
-        FOREIGN KEY (id_cliente)
-        REFERENCES cafeteria.cliente(id),
-
+        FOREIGN KEY (id_cliente) REFERENCES cafeteria.cliente(id),
     CONSTRAINT fk_pedido_cupon
-        FOREIGN KEY (id_cupon)
-        REFERENCES cafeteria.cupon(id),
-
+        FOREIGN KEY (id_cupon) REFERENCES cafeteria.cupon(id),
     CONSTRAINT fk_pedido_descuento
-        FOREIGN KEY (id_descuento)
-        REFERENCES cafeteria.descuento(id)
+        FOREIGN KEY (id_descuento) REFERENCES cafeteria.descuento(id)
 );
 
 -- Los campos de cliente, cupón y descuento son opcionales.
@@ -156,10 +138,9 @@ ALTER TABLE cafeteria.pedido
 -- Generar automáticamente el ID de los nuevos pedidos.
 CREATE SEQUENCE IF NOT EXISTS cafeteria.pedido_id_seq;
 ALTER TABLE cafeteria.pedido
-    ALTER COLUMN id SET DEFAULT nextval('cafeteria.pedido_id_seq');
+    ALTER COLUMN id SET DEFAULT nextval('cafeteria.pedido_id_seq'::regclass);
 ALTER SEQUENCE cafeteria.pedido_id_seq
     OWNED BY cafeteria.pedido.id;
-
 
 -- ---------------------------------------------------------
 -- TABLA DETALLE_PEDIDO
@@ -171,23 +152,18 @@ CREATE TABLE cafeteria.detalle_pedido (
     id_producto integer NOT NULL,
     cantidad integer NOT NULL,
     precio numeric(10,2) NOT NULL,
-
     CONSTRAINT fk_detalle_pedido
-        FOREIGN KEY (id_pedido)
-        REFERENCES cafeteria.pedido(id),
-
+        FOREIGN KEY (id_pedido) REFERENCES cafeteria.pedido(id),
     CONSTRAINT fk_detalle_producto
-        FOREIGN KEY (id_producto)
-        REFERENCES cafeteria.producto(id)
+        FOREIGN KEY (id_producto) REFERENCES cafeteria.producto(id)
 );
 
 -- Generar automáticamente el ID de los nuevos detalles de pedido.
 CREATE SEQUENCE IF NOT EXISTS cafeteria.detalle_pedido_id_seq;
 ALTER TABLE cafeteria.detalle_pedido
-    ALTER COLUMN id SET DEFAULT nextval('cafeteria.detalle_pedido_id_seq');
+    ALTER COLUMN id SET DEFAULT nextval('cafeteria.detalle_pedido_id_seq'::regclass);
 ALTER SEQUENCE cafeteria.detalle_pedido_id_seq
     OWNED BY cafeteria.detalle_pedido.id;
-
 
 -- ---------------------------------------------------------
 -- TABLA PRODUCTO_ALERGENO
@@ -196,18 +172,12 @@ ALTER SEQUENCE cafeteria.detalle_pedido_id_seq
 CREATE TABLE cafeteria.producto_alergeno (
     id_producto integer NOT NULL,
     id_alergeno integer NOT NULL,
-
     PRIMARY KEY (id_producto, id_alergeno),
-
     CONSTRAINT fk_pa_producto
-        FOREIGN KEY (id_producto)
-        REFERENCES cafeteria.producto(id),
-
+        FOREIGN KEY (id_producto) REFERENCES cafeteria.producto(id),
     CONSTRAINT fk_pa_alergeno
-        FOREIGN KEY (id_alergeno)
-        REFERENCES cafeteria.alergeno(id)
+        FOREIGN KEY (id_alergeno) REFERENCES cafeteria.alergeno(id)
 );
-
 
 -- =========================================================
 -- DATOS
@@ -319,10 +289,10 @@ VALUES
 (9, 109, '2026-09-27 10:00:00', 'entregado', 1, NULL, NULL),
 (10, 110, '2026-09-27 10:30:00', 'preparando', 3, NULL, 7);
 
--- Sincronizar la secuencia de pedidos con los IDs insertados explícitamente.
+-- Sincronizar la secuencia de pedidos con los IDs insertados.
 SELECT setval(
-    'cafeteria.pedido_id_seq',
-    COALESCE((SELECT MAX(id) FROM cafeteria.pedido), 0) + 1,
+    'cafeteria.pedido_id_seq'::regclass,
+    GREATEST(COALESCE((SELECT MAX(id) FROM cafeteria.pedido), 0) + 1, 1),
     false
 );
 
@@ -350,9 +320,9 @@ VALUES
 (18, 10, 3, 1, 2.30),
 (19, 10, 15, 1, 2.80);
 
--- Sincronizar la secuencia de detalles con los IDs insertados explícitamente.
+-- Sincronizar la secuencia de detalles después de insertar los IDs explícitos.
 SELECT setval(
-    'cafeteria.detalle_pedido_id_seq',
-    COALESCE((SELECT MAX(id) FROM cafeteria.detalle_pedido), 0) + 1,
+    'cafeteria.detalle_pedido_id_seq'::regclass,
+    GREATEST(COALESCE((SELECT MAX(id) FROM cafeteria.detalle_pedido), 0) + 1, 1),
     false
 );
