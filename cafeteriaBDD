@@ -148,6 +148,12 @@ create table pedido (
         references descuento(id)
 );
 
+-- Estos campos son opcionales: un pedido puede no tener cliente, cupón o descuento.
+ALTER TABLE public.pedido
+    ALTER COLUMN id_cliente DROP NOT NULL,
+    ALTER COLUMN id_cupon DROP NOT NULL,
+    ALTER COLUMN id_descuento DROP NOT NULL;
+
 -- Generar automáticamente el ID de los nuevos pedidos.
 CREATE SEQUENCE IF NOT EXISTS public.pedido_id_seq;
 
