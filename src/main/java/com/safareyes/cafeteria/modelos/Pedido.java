@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -30,26 +31,25 @@ public class Pedido {
     private String estado;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_cliente", nullable = false)
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_cupon", nullable = false)
+    @JoinColumn(name = "id_cupon")
     private Cupon cupon;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_descuento", nullable = false)
+    @JoinColumn(name = "id_descuento")
     private Descuento descuento;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "detalle_pedido",
-            joinColumns = @JoinColumn(name = "id_pedido"),
-            inverseJoinColumns = @JoinColumn(name = "id_producto")
-    )
-    private List<Producto> productos;
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private List<DetallePedido> detalles = new ArrayList<>();
 
-
-
-
+    public void agregarDetalle(DetallePedido detalle) {
+        detalles.add(detalle);
+        detalle.setPedido(this);
+    }
 }

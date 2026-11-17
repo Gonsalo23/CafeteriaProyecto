@@ -1,5 +1,6 @@
 package com.safareyes.cafeteria.controladores;
 
+import com.safareyes.cafeteria.dtos.request.PedidoCreateDTO;
 import com.safareyes.cafeteria.dtos.response.PedidoResponseDTO;
 import com.safareyes.cafeteria.dtos.response.ProductoRankingDTO;
 import com.safareyes.cafeteria.dtos.response.VentasDiaDTO;
@@ -10,13 +11,18 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.validation.annotation.Validated;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -27,6 +33,16 @@ import java.util.List;
 public class PedidoController {
 
     private final IPedidoServicio pedidoServicio;
+
+    @PostMapping("/pedidos")
+    public ResponseEntity<PedidoResponseDTO> crear(@Valid @RequestBody PedidoCreateDTO peticion) {
+        PedidoResponseDTO creado = pedidoServicio.crearPedido(peticion);
+        var ubicacion = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("/pedidos/{id}")
+                .buildAndExpand(creado.id())
+                .toUri();
+        return ResponseEntity.created(ubicacion).body(creado);
+    }
 
     @GetMapping("/pedidos")
     public Page<PedidoResponseDTO> listar(

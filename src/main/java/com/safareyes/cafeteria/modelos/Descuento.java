@@ -24,6 +24,7 @@ public class Descuento {
     @Column(precision = 10, scale = 2)
     private BigDecimal importe;
 
+    private String origen;
 
 
 

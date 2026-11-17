@@ -44,6 +44,8 @@ public class Cupon {
     @Column(name = "email_cliente")
     private String emailCliente;
 
+    @Column(name = "importe_minimo")
+    private BigDecimal importeMinimo;
 
 
 

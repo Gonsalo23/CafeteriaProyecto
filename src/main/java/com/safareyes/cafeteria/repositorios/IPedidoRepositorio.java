@@ -21,6 +21,18 @@ import java.util.Optional;
 
 public interface IPedidoRepositorio extends JpaRepository<Pedido, Integer>, JpaSpecificationExecutor<Pedido> {
 
+    @Query(value = """
+            select coalesce(max(numero_turno), 0) + 1
+            from cafeteria.pedido
+            where fecha >= :inicio and fecha < :fin
+            """, nativeQuery = true)
+    Integer siguienteNumeroTurno(
+            @Param("inicio") LocalDateTime inicio,
+            @Param("fin") LocalDateTime fin
+    );
+
+    long countByCupon_Id(Integer cuponId);
+
     static Specification<Pedido> filtros(String estado, LocalDateTime desde, LocalDateTime hastaExclusivo) {
         Specification<Pedido> specification =
                 (root, query, criteriaBuilder) -> criteriaBuilder.conjunction();
