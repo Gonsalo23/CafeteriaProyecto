@@ -148,6 +148,15 @@ create table pedido (
         references descuento(id)
 );
 
+-- Generar automáticamente el ID de los nuevos pedidos.
+CREATE SEQUENCE IF NOT EXISTS public.pedido_id_seq;
+
+ALTER TABLE public.pedido
+    ALTER COLUMN id SET DEFAULT nextval('public.pedido_id_seq');
+
+ALTER SEQUENCE public.pedido_id_seq
+    OWNED BY public.pedido.id;
+
 
 -- ---------------------------------------------------------
 -- TABLA DETALLE_PEDIDO
@@ -422,6 +431,13 @@ values
 
 (10, 110, '2026-09-27 10:30:00',
  'preparando', 3, null, 7);
+
+-- Sincronizar la secuencia con los pedidos insertados explícitamente.
+SELECT setval(
+    'public.pedido_id_seq',
+    COALESCE((SELECT MAX(id) FROM public.pedido), 0) + 1,
+    false
+);
 
 
 -- ---------------------------------------------------------
