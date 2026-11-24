@@ -7,36 +7,9 @@
     <option name="selectedModelId" value="ensemble" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="EndPoint 9">
-      <change afterPath="$PROJECT_DIR$/BDD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/CuponServicioImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="EndPoints 6,7,8,12,13 y 14">
+      <change afterPath="$PROJECT_DIR$/DICCIONARIO_ENDPOINTS.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/CategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/CategoriaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/CuponController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/CuponController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/ProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CategoriaDisponibilidadDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CategoriaDisponibilidadDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponCreateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponValidarDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponValidarDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/PedidoEstadoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/PedidoEstadoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/CuponResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/CuponResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/CuponValidacionResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/CuponValidacionResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/excepciones/ConflictoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/excepciones/ConflictoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/excepciones/ReglaNegocioException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/excepciones/ReglaNegocioException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/mappers/ICuponMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/mappers/ICuponMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/modelos/Cupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/modelos/Cupon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/ICuponRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/ICuponRepositorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ICategoriaServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ICategoriaServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ICuponServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ICuponServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/IPedidoServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/IPedidoServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/PedidoServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/PedidoServicioImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ProductoServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ProductoServicioImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cupon$CuponBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cupon$CuponBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cupon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/ICuponRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/ICuponRepositorio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,23 +71,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.3170772504549568" />
-      <entry key="MS500" value="2.285107204214081" />
-      <entry key="S2" value="4.52491781566806" />
-      <entry key="S5" value="8.109387841303821" />
-      <entry key="S10" value="13.928107598743743" />
-      <entry key="S30" value="31.294426708723723" />
-      <entry key="S60" value="42.08745161643815" />
-      <entry key="M2" value="49.57559992311909" />
-      <entry key="M5" value="55.00835758247323" />
-      <entry key="M10" value="57.29551784127151" />
-      <entry key="M15" value="58.342968186066365" />
-      <entry key="M30" value="59.79797910702737" />
-      <entry key="H1" value="61.48214929641297" />
-      <entry key="H2" value="71.26398307973555" />
-      <entry key="H4" value="123.00491400660074" />
-      <entry key="D1" value="502.7691919555032" />
-      <entry key="W1" value="713.174322819789" />
+      <entry key="MS100" value="1.1764641722540725" />
+      <entry key="MS500" value="2.257800381801603" />
+      <entry key="S2" value="4.148876757608229" />
+      <entry key="S5" value="6.428053108380617" />
+      <entry key="S10" value="8.144958471116961" />
+      <entry key="S30" value="9.876182174681794" />
+      <entry key="S60" value="10.412814290463094" />
+      <entry key="M2" value="10.701800117115901" />
+      <entry key="M5" value="11.84643896234082" />
+      <entry key="M10" value="18.540064583533148" />
+      <entry key="M15" value="26.135380259453928" />
+      <entry key="M30" value="41.47773042318123" />
+      <entry key="H1" value="54.897674386024555" />
+      <entry key="H2" value="71.21851255167762" />
+      <entry key="H4" value="124.07355575436044" />
+      <entry key="D1" value="506.76555942130835" />
+      <entry key="W1" value="722.7465741063162" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -122,37 +95,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="3.86323995E-316" />
-      <entry key="S60" value="1.9655149764008063E-158" />
-      <entry key="M2" value="1.4045777795490058E-79" />
-      <entry key="M5" value="3.3583743823968094E-32" />
-      <entry key="M10" value="3.413154080517416E-16" />
-      <entry key="M15" value="1.0568417385997105E-10" />
-      <entry key="M30" value="5.708697079788221E-5" />
-      <entry key="H1" value="0.07014551974242648" />
-      <entry key="H2" value="3.4158630020874297" />
-      <entry key="H4" value="29.570039911738398" />
-      <entry key="D1" value="228.21861378343078" />
-      <entry key="W1" value="334.59422126150173" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="3.3196785363833175E-167" />
+      <entry key="M2" value="5.77238952854911E-84" />
+      <entry key="M5" value="5.910892256247474E-34" />
+      <entry key="M10" value="4.5281193104115216E-17" />
+      <entry key="M15" value="2.749062424505098E-11" />
+      <entry key="M30" value="2.9115504590870503E-5" />
+      <entry key="H1" value="0.05009490976892139" />
+      <entry key="H2" value="2.886670905313441" />
+      <entry key="H4" value="27.183184074353917" />
+      <entry key="D1" value="225.03969591778866" />
+      <entry key="W1" value="333.9244045485584" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.7233777231432326" />
-      <entry key="MS500" value="1.858630504634602" />
-      <entry key="S2" value="4.366337297688019" />
-      <entry key="S5" value="8.036549585296886" />
-      <entry key="S10" value="13.888209562045605" />
-      <entry key="S30" value="31.27869099896861" />
-      <entry key="S60" value="42.07887389501964" />
-      <entry key="M2" value="49.571066546598104" />
-      <entry key="M5" value="55.006463886441644" />
-      <entry key="M10" value="57.294521168640244" />
-      <entry key="M15" value="58.34227201722216" />
-      <entry key="M30" value="59.79765723068616" />
-      <entry key="H1" value="61.55204761884217" />
-      <entry key="H2" value="74.67876189410943" />
-      <entry key="H4" value="152.57070254916155" />
-      <entry key="D1" value="730.9821188148815" />
-      <entry key="W1" value="1047.7673362514518" />
+      <entry key="MS100" value="1.1441207789435146" />
+      <entry key="MS500" value="2.244612109584095" />
+      <entry key="S2" value="4.1424701214980395" />
+      <entry key="S5" value="6.423759743771718" />
+      <entry key="S10" value="8.142104898038703" />
+      <entry key="S30" value="9.874983551922625" />
+      <entry key="S60" value="10.412175858730427" />
+      <entry key="M2" value="10.701470190779432" />
+      <entry key="M5" value="11.846271108995818" />
+      <entry key="M10" value="18.53986464988501" />
+      <entry key="M15" value="26.13515393281371" />
+      <entry key="M30" value="41.47754359023063" />
+      <entry key="H1" value="54.94758141078707" />
+      <entry key="H2" value="74.10426155692396" />
+      <entry key="H4" value="151.2528287854333" />
+      <entry key="D1" value="731.7996471564167" />
+      <entry key="W1" value="1056.6697731753447" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -326,6 +299,7 @@
     <MESSAGE value="endpoint 16" />
     <MESSAGE value="EndPoint4 y cambio de puerto por el apache (es muy pesao)" />
     <MESSAGE value="EndPoint 9" />
-    <option name="LAST_COMMIT_MESSAGE" value="EndPoint 9" />
+    <MESSAGE value="EndPoints 6,7,8,12,13 y 14" />
+    <option name="LAST_COMMIT_MESSAGE" value="EndPoints 6,7,8,12,13 y 14" />
   </component>
 </project>
