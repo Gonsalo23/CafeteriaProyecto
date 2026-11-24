@@ -7,25 +7,34 @@
     <option name="selectedModelId" value="ensemble" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="EndPoint4 y cambio de puerto por el apache (es muy pesao)">
+    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="EndPoint 9">
+      <change afterPath="$PROJECT_DIR$/BDD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/CuponServicioImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/CategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/CategoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/CuponController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/CuponController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/LineaPedidoCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/LineaPedidoCreateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/PedidoCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/PedidoCreateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/ProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CategoriaDisponibilidadDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CategoriaDisponibilidadDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponCreateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponValidarDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponValidarDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/PedidoEstadoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/PedidoEstadoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/CuponResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/CuponResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/CuponValidacionResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/response/CuponValidacionResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/excepciones/ConflictoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/excepciones/ConflictoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/excepciones/ReglaNegocioException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/excepciones/ReglaNegocioException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/mappers/ICuponMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/mappers/ICuponMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/modelos/Cupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/modelos/Cupon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/modelos/Descuento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/modelos/Descuento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/modelos/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/modelos/Pedido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/ICuponRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/ICuponRepositorio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ICategoriaServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ICategoriaServicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ICuponServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ICuponServicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/IPedidoServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/IPedidoServicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/PedidoServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/PedidoServicioImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ProductoServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ProductoServicioImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cupon$CuponBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cupon$CuponBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Cupon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Descuento$DescuentoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Descuento$DescuentoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Descuento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Descuento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Pedido$PedidoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Pedido$PedidoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Pedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/modelos/Pedido.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/ICuponRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/ICuponRepositorio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.class" afterDir="false" />
     </list>
@@ -89,23 +98,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.2104385305766816" />
-      <entry key="MS500" value="2.007883409763022" />
-      <entry key="S2" value="4.015177681246964" />
-      <entry key="S5" value="6.680557396659319" />
-      <entry key="S10" value="12.26461428627845" />
-      <entry key="S30" value="28.94472646389344" />
-      <entry key="S60" value="38.8805576986741" />
-      <entry key="M2" value="45.632836975154675" />
-      <entry key="M5" value="50.477628893214906" />
-      <entry key="M10" value="52.53996609414301" />
-      <entry key="M15" value="53.50896664054674" />
-      <entry key="M30" value="54.88310614056007" />
-      <entry key="H1" value="56.52596408735456" />
-      <entry key="H2" value="66.28956624425385" />
-      <entry key="H4" value="118.02743591581346" />
-      <entry key="D1" value="497.7848488494176" />
-      <entry key="W1" value="708.1775016265601" />
+      <entry key="MS100" value="1.3170772504549568" />
+      <entry key="MS500" value="2.285107204214081" />
+      <entry key="S2" value="4.52491781566806" />
+      <entry key="S5" value="8.109387841303821" />
+      <entry key="S10" value="13.928107598743743" />
+      <entry key="S30" value="31.294426708723723" />
+      <entry key="S60" value="42.08745161643815" />
+      <entry key="M2" value="49.57559992311909" />
+      <entry key="M5" value="55.00835758247323" />
+      <entry key="M10" value="57.29551784127151" />
+      <entry key="M15" value="58.342968186066365" />
+      <entry key="M30" value="59.79797910702737" />
+      <entry key="H1" value="61.48214929641297" />
+      <entry key="H2" value="71.26398307973555" />
+      <entry key="H4" value="123.00491400660074" />
+      <entry key="D1" value="502.7691919555032" />
+      <entry key="W1" value="713.174322819789" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -113,37 +122,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="4.22820293E-316" />
-      <entry key="S60" value="2.0562618931085373E-158" />
-      <entry key="M2" value="1.4366362762476768E-79" />
-      <entry key="M5" value="3.388827966162572E-32" />
-      <entry key="M10" value="3.4285943184385806E-16" />
-      <entry key="M15" value="1.0600265952224031E-10" />
-      <entry key="M30" value="5.7172923613543584E-5" />
-      <entry key="H1" value="0.07019830706926532" />
-      <entry key="H2" value="3.4171480475665326" />
-      <entry key="H4" value="29.575601503782472" />
-      <entry key="D1" value="228.22576719148225" />
-      <entry key="W1" value="334.59571948463383" />
+      <entry key="S30" value="3.86323995E-316" />
+      <entry key="S60" value="1.9655149764008063E-158" />
+      <entry key="M2" value="1.4045777795490058E-79" />
+      <entry key="M5" value="3.3583743823968094E-32" />
+      <entry key="M10" value="3.413154080517416E-16" />
+      <entry key="M15" value="1.0568417385997105E-10" />
+      <entry key="M30" value="5.708697079788221E-5" />
+      <entry key="H1" value="0.07014551974242648" />
+      <entry key="H2" value="3.4158630020874297" />
+      <entry key="H4" value="29.570039911738398" />
+      <entry key="D1" value="228.21861378343078" />
+      <entry key="W1" value="334.59422126150173" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.1625343436170454" />
-      <entry key="MS500" value="1.992710086140348" />
-      <entry key="S2" value="4.008043918173621" />
-      <entry key="S5" value="6.6758899636672515" />
-      <entry key="S10" value="12.260345465830785" />
-      <entry key="S30" value="28.94130519421454" />
-      <entry key="S60" value="38.87823502364772" />
-      <entry key="M2" value="45.63146518944706" />
-      <entry key="M5" value="50.47700977060619" />
-      <entry key="M10" value="52.53960842493357" />
-      <entry key="M15" value="53.50869685868379" />
-      <entry key="M30" value="54.88299776083191" />
-      <entry key="H1" value="56.59602193646897" />
-      <entry key="H2" value="69.70568314262698" />
-      <entry key="H4" value="147.5988119699335" />
-      <entry key="D1" value="726.0049333912144" />
-      <entry key="W1" value="1042.7720139120215" />
+      <entry key="MS100" value="0.7233777231432326" />
+      <entry key="MS500" value="1.858630504634602" />
+      <entry key="S2" value="4.366337297688019" />
+      <entry key="S5" value="8.036549585296886" />
+      <entry key="S10" value="13.888209562045605" />
+      <entry key="S30" value="31.27869099896861" />
+      <entry key="S60" value="42.07887389501964" />
+      <entry key="M2" value="49.571066546598104" />
+      <entry key="M5" value="55.006463886441644" />
+      <entry key="M10" value="57.294521168640244" />
+      <entry key="M15" value="58.34227201722216" />
+      <entry key="M30" value="59.79765723068616" />
+      <entry key="H1" value="61.55204761884217" />
+      <entry key="H2" value="74.67876189410943" />
+      <entry key="H4" value="152.57070254916155" />
+      <entry key="D1" value="730.9821188148815" />
+      <entry key="W1" value="1047.7673362514518" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -179,41 +188,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.CafeteriaApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CafeteriaApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.CafeteriaApplication.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;junie.plugin.stays.banner.dismissed&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/daw/Escritorio/Ejercicios JavaScript&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.CafeteriaApplicationTests.contextLoads.executor": "Run",
+    "JUnit.CafeteriaApplicationTests.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.CafeteriaApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "junie.plugin.stays.banner.dismissed": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/daw/Escritorio/Ejercicios JavaScript",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "com.github.copilot.settings.customization.CustomizationConfigurable",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.CafeteriaApplication">
     <configuration name="CafeteriaApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cafeteria" />
@@ -264,8 +273,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.200" />
-        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-IU-263.7307.200" />
+        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.353" />
+        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-IU-263.7307.353" />
       </set>
     </attachedChunks>
   </component>
@@ -316,6 +325,7 @@
     <MESSAGE value="endpoint 10" />
     <MESSAGE value="endpoint 16" />
     <MESSAGE value="EndPoint4 y cambio de puerto por el apache (es muy pesao)" />
-    <option name="LAST_COMMIT_MESSAGE" value="EndPoint4 y cambio de puerto por el apache (es muy pesao)" />
+    <MESSAGE value="EndPoint 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="EndPoint 9" />
   </component>
 </project>

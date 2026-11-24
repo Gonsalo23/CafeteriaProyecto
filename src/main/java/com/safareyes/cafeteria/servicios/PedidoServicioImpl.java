@@ -1,6 +1,7 @@
 package com.safareyes.cafeteria.servicios;
 
 import com.safareyes.cafeteria.dtos.request.PedidoCreateDTO;
+import com.safareyes.cafeteria.dtos.request.PedidoEstadoDTO;
 import com.safareyes.cafeteria.dtos.response.PedidoResponseDTO;
 import com.safareyes.cafeteria.dtos.response.LineaPedidoResponseDTO;
 import com.safareyes.cafeteria.dtos.response.ProductoRankingDTO;
@@ -180,6 +181,25 @@ public class PedidoServicioImpl implements IPedidoServicio {
     }
 
     @Override
+    @Transactional
+    public PedidoResponseDTO cambiarEstado(Integer id, PedidoEstadoDTO peticion) {
+        Pedido pedido = pedidoRepo.findById(id)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Pedido no encontrado con ID: " + id));
+        String estadoActual = pedido.getEstado();
+        String estadoNuevo = peticion.estado();
+
+        if (!estadoActual.equals(estadoNuevo) && !transicionPermitida(estadoActual, estadoNuevo)) {
+            throw new ReglaNegocioException(
+                    "No se puede cambiar el estado del pedido de " + estadoActual + " a " + estadoNuevo + "."
+            );
+        }
+
+        pedido.setEstado(estadoNuevo);
+        var lineas = pedidoMapper.toLineaResponseDTO(pedidoRepo.buscarLineasPorPedidoId(id));
+        return pedidoMapper.toResponseDTO(pedido, lineas);
+    }
+
+    @Override
     @Transactional(readOnly = true)
     public VentasDiaDTO consultarVentasDia(LocalDate fecha) {
         return pedidoRepo.ventasDia(fecha.atStartOfDay(), fecha.plusDays(1).atStartOfDay());
@@ -211,12 +231,15 @@ public class PedidoServicioImpl implements IPedidoServicio {
 
         Cupon cupon = cuponRepo.findByCodigoIgnoreCase(codigo.trim())
                 .orElseThrow(() -> new RecursoNoEncontradoException("Cupón no encontrado: " + codigo));
+        if (!Boolean.TRUE.equals(cupon.getActivo())) {
+            throw new ReglaNegocioException("El cupón está inactivo.");
+        }
         if (cupon.getFechaInicio() != null && ahora.isBefore(cupon.getFechaInicio())
                 || cupon.getFechaFin() != null && ahora.isAfter(cupon.getFechaFin())) {
             throw new ReglaNegocioException("El cupón no está vigente.");
         }
         if (cupon.getMaxUsos() != null
-                && pedidoRepo.countByCupon_Id(cupon.getId()) >= cupon.getMaxUsos()) {
+                && pedidoRepo.countUsosActivosDeCupon(cupon.getId()) >= cupon.getMaxUsos()) {
             throw new ReglaNegocioException("El cupón ha alcanzado su máximo de usos.");
         }
         if (cupon.getImporteMinimo() != null && subtotal.compareTo(cupon.getImporteMinimo()) < 0) {
@@ -243,5 +266,14 @@ public class PedidoServicioImpl implements IPedidoServicio {
             default -> throw new ReglaNegocioException("El tipo de descuento del cupón no es válido.");
         };
         return importe.min(subtotal).setScale(2, RoundingMode.HALF_UP);
+    }
+
+    private boolean transicionPermitida(String estadoActual, String estadoNuevo) {
+        return switch (estadoActual) {
+            case "pendiente" -> estadoNuevo.equals("en_preparacion") || estadoNuevo.equals("cancelado");
+            case "en_preparacion" -> estadoNuevo.equals("listo");
+            case "listo" -> estadoNuevo.equals("entregado");
+            default -> false;
+        };
     }
 }

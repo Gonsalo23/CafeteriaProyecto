@@ -24,6 +24,7 @@ public class Cupon {
     private Integer id;
 
 
+    @Column(nullable = false, unique = true, length = 50)
     private String codigo;
 
 
@@ -47,7 +48,9 @@ public class Cupon {
     @Column(name = "importe_minimo")
     private BigDecimal importeMinimo;
 
-
+    @Builder.Default
+    @Column(nullable = false)
+    private Boolean activo = true;
 
 
 

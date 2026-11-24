@@ -58,7 +58,10 @@ public class ProductoController {
         return ResponseEntity.noContent().build();
     }
 
-
-
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> darDeBaja(@PathVariable Integer id) {
+        productoServicio.bajaLogica(id);
+        return ResponseEntity.noContent().build();
+    }
 
 }

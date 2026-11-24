@@ -72,6 +72,15 @@ public class ProductoServicioImpl implements IProductoServicio, ICategoriaServic
 
     @Override
     @Transactional
+    public void cambiarDisponibilidadCategoria(Integer id, Boolean disponibilidad) {
+        Categoria categoria = categoriaRepo.findById(id)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Categoría no encontrada con ID: " + id));
+        categoria.setDisponibilidad(disponibilidad);
+        categoriaRepo.save(categoria);
+    }
+
+    @Override
+    @Transactional
     public ProductoResponseDTO crearProducto(ProductoCreateDTO dto) {
         Categoria cat = categoriaRepo.findById(dto.idCategoria())
                 .orElseThrow(() -> new RecursoNoEncontradoException("Categoría no encontrada con ID: " + dto.idCategoria()));

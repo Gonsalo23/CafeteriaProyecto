@@ -10,4 +10,5 @@ import java.util.Optional;
 
 public interface ICuponRepositorio extends JpaRepository<Cupon, Integer> {
     Optional<Cupon> findByCodigoIgnoreCase(String codigo);
+    boolean existsByCodigoIgnoreCase(String codigo);
 }

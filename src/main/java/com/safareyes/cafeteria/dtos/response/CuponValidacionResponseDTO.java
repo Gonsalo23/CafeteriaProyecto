@@ -1,4 +1,12 @@
 package com.safareyes.cafeteria.dtos.response;
 
-public record CuponValidacionResponseDTO() {
+import java.math.BigDecimal;
+
+public record CuponValidacionResponseDTO(
+        String codigo,
+        boolean valido,
+        BigDecimal descuentoAplicado,
+        BigDecimal totalConDescuento,
+        String mensaje
+) {
 }

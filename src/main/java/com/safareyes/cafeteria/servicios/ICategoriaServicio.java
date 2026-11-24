@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ICategoriaServicio {
     List<ICategoriaRepositorio.CategoriaResumen> listarCategorias();
+    void cambiarDisponibilidadCategoria(Integer id, Boolean disponibilidad);
 }

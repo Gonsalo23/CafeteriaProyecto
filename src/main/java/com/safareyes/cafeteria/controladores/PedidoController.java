@@ -1,6 +1,7 @@
 package com.safareyes.cafeteria.controladores;
 
 import com.safareyes.cafeteria.dtos.request.PedidoCreateDTO;
+import com.safareyes.cafeteria.dtos.request.PedidoEstadoDTO;
 import com.safareyes.cafeteria.dtos.response.PedidoResponseDTO;
 import com.safareyes.cafeteria.dtos.response.ProductoRankingDTO;
 import com.safareyes.cafeteria.dtos.response.VentasDiaDTO;
@@ -12,6 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,6 +59,14 @@ public class PedidoController {
     @GetMapping("/pedidos/{id}")
     public PedidoResponseDTO buscarPorId(@PathVariable Integer id) {
         return pedidoServicio.buscarPedidoPorId(id);
+    }
+
+    @PatchMapping("/pedidos/{id}/estado")
+    public PedidoResponseDTO cambiarEstado(
+            @PathVariable Integer id,
+            @Valid @RequestBody PedidoEstadoDTO peticion
+    ) {
+        return pedidoServicio.cambiarEstado(id, peticion);
     }
 
     @GetMapping("/informes/ventas-dia")

@@ -31,7 +31,13 @@ public interface IPedidoRepositorio extends JpaRepository<Pedido, Integer>, JpaS
             @Param("fin") LocalDateTime fin
     );
 
-    long countByCupon_Id(Integer cuponId);
+    @Query("""
+            select count(p)
+            from Pedido p
+            where p.cupon.id = :cuponId
+              and lower(p.estado) <> 'cancelado'
+            """)
+    long countUsosActivosDeCupon(@Param("cuponId") Integer cuponId);
 
     static Specification<Pedido> filtros(String estado, LocalDateTime desde, LocalDateTime hastaExclusivo) {
         Specification<Pedido> specification =
