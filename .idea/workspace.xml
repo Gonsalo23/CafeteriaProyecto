@@ -7,14 +7,10 @@
     <option name="selectedModelId" value="ensemble" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="DICCIONARIO_ENDPOINTS.md -&gt; Diccionario de cada EndPoint">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/validaciones/CodigoCupon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/validaciones/CodigoCuponValidator.java" afterDir="false" />
+    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="validation cupones">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/controladores/GlobalErrorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDD" beforeDir="false" afterPath="$PROJECT_DIR$/BDD.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DICCIONARIO_ENDPOINTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/DICCIONARIO_ENDPOINTS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponCreateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponValidarDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponValidarDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ProductoServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/servicios/ProductoServicioImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,61 +72,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000311124073" />
-      <entry key="MS500" value="1.0633508766942057" />
-      <entry key="S2" value="2.1180099011282243" />
-      <entry key="S5" value="3.0170998493311316" />
-      <entry key="S10" value="3.4590414607276805" />
-      <entry key="S30" value="3.81146056645741" />
-      <entry key="S60" value="4.093482584694668" />
-      <entry key="M2" value="5.268336745176747" />
-      <entry key="M5" value="8.72869164734707" />
-      <entry key="M10" value="14.225869747167078" />
-      <entry key="M15" value="20.532752781356116" />
-      <entry key="M30" value="37.02131223833342" />
-      <entry key="H1" value="55.15191830294105" />
-      <entry key="H2" value="75.53474238098751" />
-      <entry key="H4" value="129.38457885172446" />
-      <entry key="D1" value="514.4699419047192" />
-      <entry key="W1" value="734.6642785775133" />
+      <entry key="MS100" value="1.0000792466541903" />
+      <entry key="MS500" value="1.2629154562303713" />
+      <entry key="S2" value="2.2041723995973923" />
+      <entry key="S5" value="2.6337495384891363" />
+      <entry key="S10" value="2.8628430084163075" />
+      <entry key="S30" value="4.252052357560622" />
+      <entry key="S60" value="6.774040283169098" />
+      <entry key="M2" value="10.704992334537092" />
+      <entry key="M5" value="16.869204661189208" />
+      <entry key="M10" value="21.17156471324025" />
+      <entry key="M15" value="23.324838624567807" />
+      <entry key="M30" value="26.813421028412524" />
+      <entry key="H1" value="35.07967844436418" />
+      <entry key="H2" value="56.65904266375537" />
+      <entry key="H4" value="108.29701757053563" />
+      <entry key="D1" value="505.68329723772683" />
+      <entry key="W1" value="761.9944860998723" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.3371076692577072E-207" />
-      <entry key="S2" value="1.912236462023801E-52" />
-      <entry key="S5" value="2.0540766134269717E-21" />
-      <entry key="S10" value="4.5321921996170577E-11" />
-      <entry key="S30" value="3.565354952764551E-4" />
-      <entry key="S60" value="0.018882147528193262" />
-      <entry key="M2" value="0.13741232669667325" />
-      <entry key="M5" value="0.4520747775808506" />
-      <entry key="M10" value="0.6723650627306942" />
-      <entry key="M15" value="0.7674853467470316" />
-      <entry key="M30" value="0.8760800358127404" />
-      <entry key="H1" value="0.9749585122847184" />
-      <entry key="H2" value="3.513715207205438" />
-      <entry key="H4" value="26.513696076975858" />
-      <entry key="D1" value="223.6960231605126" />
-      <entry key="W1" value="334.4255605004991" />
+      <entry key="MS100" value="2.3182538441796067E-69" />
+      <entry key="MS500" value="1.875133521584216E-14" />
+      <entry key="S2" value="3.7078108309138846E-4" />
+      <entry key="S5" value="0.04591000635118246" />
+      <entry key="S10" value="0.26524790510611307" />
+      <entry key="S30" value="1.0682209778467424" />
+      <entry key="S60" value="2.0826081061323927" />
+      <entry key="M2" value="3.871434371581414" />
+      <entry key="M5" value="6.717571244987143" />
+      <entry key="M10" value="8.538318721690116" />
+      <entry key="M15" value="9.440172810558202" />
+      <entry key="M30" value="10.753886322319703" />
+      <entry key="H1" value="11.80001991405827" />
+      <entry key="H2" value="13.457708373999946" />
+      <entry key="H4" value="27.912836145123407" />
+      <entry key="D1" value="217.00796819190614" />
+      <entry key="W1" value="343.0585243108281" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9460576718436301" />
-      <entry key="MS500" value="1.0499479950700508" />
-      <entry key="S2" value="2.105395791442269" />
-      <entry key="S5" value="3.0090077982465213" />
-      <entry key="S10" value="3.4542561828158234" />
-      <entry key="S30" value="3.810002830449068" />
-      <entry key="S60" value="4.110794851506943" />
-      <entry key="M2" value="5.402986829137774" />
-      <entry key="M5" value="9.177601130682092" />
-      <entry key="M10" value="14.895900923261426" />
-      <entry key="M15" value="21.298424906081806" />
-      <entry key="M30" value="37.89628023956906" />
-      <entry key="H1" value="56.1262079685212" />
-      <entry key="H2" value="79.04737467192187" />
-      <entry key="H4" value="155.89446470754177" />
-      <entry key="D1" value="738.1603920802996" />
-      <entry key="W1" value="1069.088632084703" />
+      <entry key="MS100" value="0.0011119565957462575" />
+      <entry key="MS500" value="0.4343956777008991" />
+      <entry key="S2" value="1.7840829608937965" />
+      <entry key="S5" value="2.4502668593811037" />
+      <entry key="S10" value="2.933083351028634" />
+      <entry key="S30" value="5.134373398412424" />
+      <entry key="S60" value="8.657070612384269" />
+      <entry key="M2" value="14.378193489176903" />
+      <entry key="M5" value="23.449088109473756" />
+      <entry key="M10" value="29.623385144427225" />
+      <entry key="M15" value="32.701320219608284" />
+      <entry key="M30" value="37.530774192943845" />
+      <entry key="H1" value="46.85954092010854" />
+      <entry key="H2" value="70.10575188264018" />
+      <entry key="H4" value="136.20216430317834" />
+      <entry key="D1" value="722.6852392908792" />
+      <entry key="W1" value="1105.051683881565" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -283,7 +279,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="AAA" />
     <MESSAGE value="Cupon y Producto Tablas" />
     <MESSAGE value="Todo lo demas tablas (me quedan algunos)" />
     <MESSAGE value="tabla usuario y descuento" />
@@ -308,6 +303,7 @@
     <MESSAGE value="EndPoint 9" />
     <MESSAGE value="EndPoints 6,7,8,12,13 y 14" />
     <MESSAGE value="DICCIONARIO_ENDPOINTS.md -&gt; Diccionario de cada EndPoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="DICCIONARIO_ENDPOINTS.md -&gt; Diccionario de cada EndPoint" />
+    <MESSAGE value="validation cupones" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation cupones" />
   </component>
 </project>

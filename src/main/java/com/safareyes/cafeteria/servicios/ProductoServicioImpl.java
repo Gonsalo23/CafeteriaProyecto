@@ -88,8 +88,22 @@ public class ProductoServicioImpl implements IProductoServicio, ICategoriaServic
         Producto producto = productoMapper.toEntity(dto);
         producto.setCategoria(cat);
 
-        if (dto.idAlergenos() != null && !dto.idAlergenos().isEmpty()) {
-            List<Alergeno> alergenos = alergenoRepo.findAllById(dto.idAlergenos());
+        if (dto.idAlergenos() != null) {
+            if (dto.idAlergenos().isEmpty()) {
+                throw new RecursoNoEncontradoException(
+                        "No se encontró ningún alérgeno: la lista de alérgenos no puede estar vacía."
+                );
+            }
+
+            Set<Integer> idsAlergenos = new HashSet<>(dto.idAlergenos());
+            List<Alergeno> alergenos = alergenoRepo.findAllById(idsAlergenos);
+            if (alergenos.size() != idsAlergenos.size()) {
+                Set<Integer> idsEncontrados = alergenos.stream()
+                        .map(Alergeno::getId)
+                        .collect(Collectors.toSet());
+                idsAlergenos.removeAll(idsEncontrados);
+                throw new RecursoNoEncontradoException("Alérgenos no encontrados con IDs: " + idsAlergenos);
+            }
             producto.setAlergenos(alergenos);
         }
 
@@ -110,14 +124,17 @@ public class ProductoServicioImpl implements IProductoServicio, ICategoriaServic
 
         Set<Integer> idsAlergenos = new HashSet<>(dto.idsAlergenos());
         List<Alergeno> alergenos = alergenoRepo.findAllById(idsAlergenos);
-        if (alergenos.size() != idsAlergenos.size()) {
+        if (alergenos.size() == idsAlergenos.size()) {
+              throw new RecursoNoEncontradoException("Alérgenos no encontrados con IDs: " + idsAlergenos);
+
+
+        } else {
             Set<Integer> idsEncontrados = alergenos.stream()
                     .map(Alergeno::getId)
                     .collect(Collectors.toSet());
             idsAlergenos.removeAll(idsEncontrados);
-            throw new RecursoNoEncontradoException("Alérgenos no encontrados con IDs: " + idsAlergenos);
+            producto.setAlergenos(alergenos);
         }
-        producto.setAlergenos(alergenos);
 
         return productoMapper.toResponseDTO(productoRepo.save(producto));
     }
