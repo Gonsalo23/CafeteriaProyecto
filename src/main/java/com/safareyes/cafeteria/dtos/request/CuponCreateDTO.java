@@ -8,6 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
+import com.safareyes.cafeteria.validaciones.CodigoCupon;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 public record CuponCreateDTO(
         @NotBlank(message = "El código del cupón es obligatorio")
         @Size(max = 50, message = "El código no puede superar los 50 caracteres")
+        @CodigoCupon
         String codigo,
 
         @NotBlank(message = "El tipo de descuento es obligatorio")

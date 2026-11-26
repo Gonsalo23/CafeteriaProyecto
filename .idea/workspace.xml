@@ -7,9 +7,14 @@
     <option name="selectedModelId" value="ensemble" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="EndPoints 6,7,8,12,13 y 14">
-      <change afterPath="$PROJECT_DIR$/DICCIONARIO_ENDPOINTS.md" afterDir="false" />
+    <list default="true" id="f33d56a9-08ca-4681-8e60-76fa583181a3" name="Changes" comment="DICCIONARIO_ENDPOINTS.md -&gt; Diccionario de cada EndPoint">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/validaciones/CodigoCupon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/validaciones/CodigoCuponValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BDD" beforeDir="false" afterPath="$PROJECT_DIR$/BDD.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DICCIONARIO_ENDPOINTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/DICCIONARIO_ENDPOINTS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponCreateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponValidarDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/safareyes/cafeteria/dtos/request/CuponValidarDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,61 +76,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.1764641722540725" />
-      <entry key="MS500" value="2.257800381801603" />
-      <entry key="S2" value="4.148876757608229" />
-      <entry key="S5" value="6.428053108380617" />
-      <entry key="S10" value="8.144958471116961" />
-      <entry key="S30" value="9.876182174681794" />
-      <entry key="S60" value="10.412814290463094" />
-      <entry key="M2" value="10.701800117115901" />
-      <entry key="M5" value="11.84643896234082" />
-      <entry key="M10" value="18.540064583533148" />
-      <entry key="M15" value="26.135380259453928" />
-      <entry key="M30" value="41.47773042318123" />
-      <entry key="H1" value="54.897674386024555" />
-      <entry key="H2" value="71.21851255167762" />
-      <entry key="H4" value="124.07355575436044" />
-      <entry key="D1" value="506.76555942130835" />
-      <entry key="W1" value="722.7465741063162" />
+      <entry key="MS100" value="1.0000000311124073" />
+      <entry key="MS500" value="1.0633508766942057" />
+      <entry key="S2" value="2.1180099011282243" />
+      <entry key="S5" value="3.0170998493311316" />
+      <entry key="S10" value="3.4590414607276805" />
+      <entry key="S30" value="3.81146056645741" />
+      <entry key="S60" value="4.093482584694668" />
+      <entry key="M2" value="5.268336745176747" />
+      <entry key="M5" value="8.72869164734707" />
+      <entry key="M10" value="14.225869747167078" />
+      <entry key="M15" value="20.532752781356116" />
+      <entry key="M30" value="37.02131223833342" />
+      <entry key="H1" value="55.15191830294105" />
+      <entry key="H2" value="75.53474238098751" />
+      <entry key="H4" value="129.38457885172446" />
+      <entry key="D1" value="514.4699419047192" />
+      <entry key="W1" value="734.6642785775133" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="3.3196785363833175E-167" />
-      <entry key="M2" value="5.77238952854911E-84" />
-      <entry key="M5" value="5.910892256247474E-34" />
-      <entry key="M10" value="4.5281193104115216E-17" />
-      <entry key="M15" value="2.749062424505098E-11" />
-      <entry key="M30" value="2.9115504590870503E-5" />
-      <entry key="H1" value="0.05009490976892139" />
-      <entry key="H2" value="2.886670905313441" />
-      <entry key="H4" value="27.183184074353917" />
-      <entry key="D1" value="225.03969591778866" />
-      <entry key="W1" value="333.9244045485584" />
+      <entry key="MS500" value="1.3371076692577072E-207" />
+      <entry key="S2" value="1.912236462023801E-52" />
+      <entry key="S5" value="2.0540766134269717E-21" />
+      <entry key="S10" value="4.5321921996170577E-11" />
+      <entry key="S30" value="3.565354952764551E-4" />
+      <entry key="S60" value="0.018882147528193262" />
+      <entry key="M2" value="0.13741232669667325" />
+      <entry key="M5" value="0.4520747775808506" />
+      <entry key="M10" value="0.6723650627306942" />
+      <entry key="M15" value="0.7674853467470316" />
+      <entry key="M30" value="0.8760800358127404" />
+      <entry key="H1" value="0.9749585122847184" />
+      <entry key="H2" value="3.513715207205438" />
+      <entry key="H4" value="26.513696076975858" />
+      <entry key="D1" value="223.6960231605126" />
+      <entry key="W1" value="334.4255605004991" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.1441207789435146" />
-      <entry key="MS500" value="2.244612109584095" />
-      <entry key="S2" value="4.1424701214980395" />
-      <entry key="S5" value="6.423759743771718" />
-      <entry key="S10" value="8.142104898038703" />
-      <entry key="S30" value="9.874983551922625" />
-      <entry key="S60" value="10.412175858730427" />
-      <entry key="M2" value="10.701470190779432" />
-      <entry key="M5" value="11.846271108995818" />
-      <entry key="M10" value="18.53986464988501" />
-      <entry key="M15" value="26.13515393281371" />
-      <entry key="M30" value="41.47754359023063" />
-      <entry key="H1" value="54.94758141078707" />
-      <entry key="H2" value="74.10426155692396" />
-      <entry key="H4" value="151.2528287854333" />
-      <entry key="D1" value="731.7996471564167" />
-      <entry key="W1" value="1056.6697731753447" />
+      <entry key="MS100" value="0.9460576718436301" />
+      <entry key="MS500" value="1.0499479950700508" />
+      <entry key="S2" value="2.105395791442269" />
+      <entry key="S5" value="3.0090077982465213" />
+      <entry key="S10" value="3.4542561828158234" />
+      <entry key="S30" value="3.810002830449068" />
+      <entry key="S60" value="4.110794851506943" />
+      <entry key="M2" value="5.402986829137774" />
+      <entry key="M5" value="9.177601130682092" />
+      <entry key="M10" value="14.895900923261426" />
+      <entry key="M15" value="21.298424906081806" />
+      <entry key="M30" value="37.89628023956906" />
+      <entry key="H1" value="56.1262079685212" />
+      <entry key="H2" value="79.04737467192187" />
+      <entry key="H4" value="155.89446470754177" />
+      <entry key="D1" value="738.1603920802996" />
+      <entry key="W1" value="1069.088632084703" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -161,41 +166,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.CafeteriaApplicationTests.contextLoads.executor": "Run",
-    "JUnit.CafeteriaApplicationTests.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.CafeteriaApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
-    "git-widget-placeholder": "master",
-    "junie.onboarding.icon.badge.shown": "true",
-    "junie.plugin.stays.banner.dismissed": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/daw/Escritorio/Ejercicios JavaScript",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.customization.CustomizationConfigurable",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.CafeteriaApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CafeteriaApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CafeteriaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;junie.plugin.stays.banner.dismissed&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/daw/Escritorio/Ejercicios JavaScript&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.CafeteriaApplication">
     <configuration name="CafeteriaApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cafeteria" />
@@ -300,6 +307,7 @@
     <MESSAGE value="EndPoint4 y cambio de puerto por el apache (es muy pesao)" />
     <MESSAGE value="EndPoint 9" />
     <MESSAGE value="EndPoints 6,7,8,12,13 y 14" />
-    <option name="LAST_COMMIT_MESSAGE" value="EndPoints 6,7,8,12,13 y 14" />
+    <MESSAGE value="DICCIONARIO_ENDPOINTS.md -&gt; Diccionario de cada EndPoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="DICCIONARIO_ENDPOINTS.md -&gt; Diccionario de cada EndPoint" />
   </component>
 </project>

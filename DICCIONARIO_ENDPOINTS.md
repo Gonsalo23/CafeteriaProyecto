@@ -161,7 +161,7 @@ Las rutas de esta lista reflejan las anotaciones actuales del código.
   método `cambiarEstado`.
 - **Entrada:** [PedidoEstadoDTO.java](src/main/java/com/safareyes/cafeteria/dtos/request/PedidoEstadoDTO.java).
 - **Servicio:** [IPedidoServicio.java](src/main/java/com/safareyes/cafeteria/servicios/IPedidoServicio.java),
-  [PedidoServicioImpl.java](src/main/java/com/safareyes/cafeteria/servicios/PedidoServicioImpl.java) — valida las transiciones permitidas.
+  [PedidoServicioImpl.java](src/main/java/com/safareyes/cafeteria/servicios/PedidoServicioImpl.java) — válida las transiciones permitidas.
 - **Acceso a datos/modelo:** [IPedidoRepositorio.java](src/main/java/com/safareyes/cafeteria/repositorios/IPedidoRepositorio.java),
   [Pedido.java](src/main/java/com/safareyes/cafeteria/modelos/Pedido.java).
 - **Salida:** [PedidoResponseDTO.java](src/main/java/com/safareyes/cafeteria/dtos/response/PedidoResponseDTO.java).
@@ -223,7 +223,7 @@ Las rutas de esta lista reflejan las anotaciones actuales del código.
 - [ConflictoException.java](src/main/java/com/safareyes/cafeteria/excepciones/ConflictoException.java) — conflictos, por ejemplo un código de
   cupón duplicado.
 - [ReglaNegocioException.java](src/main/java/com/safareyes/cafeteria/excepciones/ReglaNegocioException.java) — reglas de negocio incumplidas.
-- [BDD](BDD) — definición SQL de tablas y datos iniciales; los cambios en este
+- [BDD](BDD.sql) — definición SQL de tablas y datos iniciales; los cambios en este
   archivo no modifican automáticamente una base de datos PostgreSQL ya creada.
 
 `IntegracionController.java` está vacío actualmente y no expone endpoints.
