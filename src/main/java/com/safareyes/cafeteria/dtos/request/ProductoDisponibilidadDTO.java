@@ -1,9 +1,7 @@
 package com.safareyes.cafeteria.dtos.request;
 
-import jakarta.validation.constraints.NotNull;
+import tools.jackson.databind.JsonNode;
 
 public record ProductoDisponibilidadDTO(
-        @NotNull(message = "El estado de disponibilidad es obligatorio")
-        Boolean disponible
+        JsonNode disponible
 ) {}
-

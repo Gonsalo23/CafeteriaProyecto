@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -54,7 +55,13 @@ public class ProductoController {
 
     @PatchMapping("/{id}/disponibilidad")
     public ResponseEntity<Void> cambiarDisponibilidad(@PathVariable Integer id, @Valid @RequestBody ProductoDisponibilidadDTO dto) {
-        productoServicio.cambiarDisponibilidad(id, dto.disponible());
+        if (dto.disponible() == null || !dto.disponible().isBoolean()) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "El campo disponible debe ser true o false."
+            );
+        }
+        productoServicio.cambiarDisponibilidad(id, dto.disponible().booleanValue());
         return ResponseEntity.noContent().build();
     }
 

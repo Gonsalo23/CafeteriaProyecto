@@ -3,9 +3,9 @@
 Referencia de los endpoints implementados y de los archivos Java relacionados.
 Las rutas de esta lista reflejan las anotaciones actuales del código.
 
-> **Prefijo de API:** el documento del proyecto puede indicar `/api/v1`, pero los
-> controladores actuales no tienen ese prefijo. Por ejemplo, la ruta actual es
-> `/productos`, no `/api/v1/productos`.
+> **Prefijo de API:** las rutas reflejan las anotaciones actuales. El controlador
+> de categorías admite `/api/v1/categorias` y mantiene `/categorias` como alias.
+> Los demás controladores aún no tienen el prefijo `/api/v1`.
 
 ## Productos
 
@@ -89,18 +89,21 @@ Las rutas de esta lista reflejan las anotaciones actuales del código.
 
 ### Endpoint 7 — Listar categorías
 
-- **HTTP:** `GET /categorias`
+- **HTTP:** `GET /api/v1/categorias` (también disponible como `GET /categorias`).
 - **Controlador:** [CategoriaController.java](src/main/java/com/safareyes/cafeteria/controladores/CategoriaController.java) — método `listar`.
 - **Servicio:** [ICategoriaServicio.java](src/main/java/com/safareyes/cafeteria/servicios/ICategoriaServicio.java),
   [ProductoServicioImpl.java](src/main/java/com/safareyes/cafeteria/servicios/ProductoServicioImpl.java) — método `listarCategorias`.
+- **Filtros opcionales:** `id` y `disponibilidad` (`true` o `false`), combinables.
 - **Acceso a datos:** [ICategoriaRepositorio.java](src/main/java/com/safareyes/cafeteria/repositorios/ICategoriaRepositorio.java) — consulta y
   proyección `CategoriaResumen`.
 - **Modelo:** [Categoria.java](src/main/java/com/safareyes/cafeteria/modelos/Categoria.java).
 - **Salida:** lista de categorías con el número de productos activos.
+- **Acceso:** público, sin autenticación.
 
 ### Endpoint 8 — Cambiar disponibilidad de categoría
 
-- **HTTP:** `PATCH /categorias/{id}/disponibilidad`
+- **HTTP:** `PATCH /api/v1/categorias/{id}/disponibilidad` (también disponible
+  bajo `/categorias/{id}/disponibilidad`).
 - **Controlador:** [CategoriaController.java](src/main/java/com/safareyes/cafeteria/controladores/CategoriaController.java) —
   método `cambiarDisponibilidad`.
 - **Entrada:** [CategoriaDisponibilidadDTO.java](src/main/java/com/safareyes/cafeteria/dtos/request/CategoriaDisponibilidadDTO.java), con el campo

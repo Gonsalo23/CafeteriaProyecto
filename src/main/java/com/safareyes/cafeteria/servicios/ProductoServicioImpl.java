@@ -66,8 +66,8 @@ public class ProductoServicioImpl implements IProductoServicio, ICategoriaServic
 
     @Override
     @Transactional(readOnly = true)
-    public List<ICategoriaRepositorio.CategoriaResumen> listarCategorias() {
-        return categoriaRepo.listarConCantidadProductosActivos();
+    public List<ICategoriaRepositorio.CategoriaResumen> listarCategorias(Integer id, Boolean disponibilidad) {
+        return categoriaRepo.listarConCantidadProductosActivos(id, disponibilidad);
     }
 
     @Override
@@ -124,17 +124,14 @@ public class ProductoServicioImpl implements IProductoServicio, ICategoriaServic
 
         Set<Integer> idsAlergenos = new HashSet<>(dto.idsAlergenos());
         List<Alergeno> alergenos = alergenoRepo.findAllById(idsAlergenos);
-        if (alergenos.size() == idsAlergenos.size()) {
-              throw new RecursoNoEncontradoException("Alérgenos no encontrados con IDs: " + idsAlergenos);
-
-
-        } else {
+        if (alergenos.size() != idsAlergenos.size()) {
             Set<Integer> idsEncontrados = alergenos.stream()
                     .map(Alergeno::getId)
                     .collect(Collectors.toSet());
             idsAlergenos.removeAll(idsEncontrados);
-            producto.setAlergenos(alergenos);
+            throw new RecursoNoEncontradoException("Alérgenos no encontrados con IDs: " + idsAlergenos);
         }
+        producto.setAlergenos(alergenos);
 
         return productoMapper.toResponseDTO(productoRepo.save(producto));
     }
